@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="117px" height="111px" viewBox="0 0 117 111" enable-background="new 0 0 117 111" xml:space="preserve">
+<rect x="27.591" y="2.913" fill="#FFFFFF" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="80.365" height="8.478"/>
+<g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<rect id="SVGID_1_" x="29.479" y="5.745" width="77.477" height="5.646"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  overflow="visible"/>
+				</clipPath>
+				<rect x="29.479" y="5.745" clip-path="url(#SVGID_2_)" fill="#FFAEC9" width="77.477" height="5.646"/>
+			</g>
+		</g>
+	</g>
+</g>
+<polyline fill="none" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	111.7,44.125 111.7,73.611 83.848,73.611 "/>
+<line fill="none" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="111.7" y1="30.39" x2="111.7" y2="33.02"/>
+<rect x="29.847" y="11.39" fill="#FFFFFF" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="75.854" height="56.221"/>
+<g>
+	<rect x="38.8" y="19.496" fill="#276EC5" width="42.962" height="3.943"/>
+	<rect x="38.8" y="25.506" fill="#276EC5" width="48.095" height="3.943"/>
+	<rect x="38.8" y="31.518" fill="#276EC5" width="37.267" height="3.943"/>
+	<rect x="38.8" y="37.529" fill="#276EC5" width="31.474" height="3.941"/>
+	<rect x="38.8" y="43.539" fill="#276EC5" width="33.685" height="3.943"/>
+	<rect x="38.8" y="49.551" fill="#276EC5" width="45.281" height="3.943"/>
+	<rect x="38.8" y="55.563" fill="#276EC5" width="58.165" height="3.943"/>
+</g>
+<g>
+	<g>
+		
+			<path fill="#FFFFFF" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M29.181,73.793v28.252c0,2.73-2.215,4.944-4.945,4.944s-4.943-2.214-4.943-4.944c0,2.73-2.213,4.944-4.943,4.944
+			s-4.943-2.214-4.943-4.944V73.793c-2.984-0.164-5.357-2.628-5.357-5.654V53.127V39.56c0-2.269,1.566-4.236,3.777-4.747
+			l5.186-1.197c2.211-0.511,3.775-2.479,3.775-4.746v-6.952H21.8v6.952c0,2.268,1.564,4.235,3.775,4.746l5.188,1.197
+			c0,0,5.231,1.507,23.777,1.709c0,0,2.896,0.327,2.896,3.202S54.538,43.1,54.538,43.1s-14.011,1-25.357,0V73.793z"/>
+		
+			<path fill="#FFFFFF" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M20.011,30.129h-1.436c-2.869,0-5.191-2.324-5.191-5.19v-5.871c0-2.866,2.322-5.189,5.191-5.189h1.436
+			c2.867,0,5.191,2.323,5.191,5.189v5.871C25.202,27.805,22.878,30.129,20.011,30.129z"/>
+	</g>
+	
+		<line fill="none" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="19.292" y1="106.045" x2="19.292" y2="72.055"/>
+	
+		<line fill="none" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="9.405" y1="77.793" x2="9.405" y2="48.964"/>
+</g>
+<line fill="none" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="29.181" y1="88.793" x2="29.181" y2="59.964"/>
+<line fill="none" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="67.773" y1="67.611" x2="67.773" y2="90.7"/>
+<path fill="#7BC3FF" d="M71.811,94.734c0,2.229-1.808,4.037-4.035,4.037c-2.229,0-4.037-1.81-4.037-4.037
+	c0-2.229,1.808-4.035,4.037-4.035C70.003,90.699,71.811,92.506,71.811,94.734"/>
+<circle fill="none" stroke="#2D2F65" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="67.773" cy="94.735" r="4.036"/>
+</svg>

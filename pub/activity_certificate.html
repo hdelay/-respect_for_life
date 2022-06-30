@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		ul, li, ol, dl {list-style: none;}
+
+		/* 활동증명서 */
+		.activity_certificate {
+			padding: 80px 10%;
+			border: 1px solid #ddd;
+			background-color: rgba(255,255,255,.8);
+		}
+		.activity_certificate h3 {
+			font-size: 40px;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		.activity_certificate .certificate_info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding-top: 40px;
+		}
+		.activity_certificate .certificate_info li {
+			font-size: 20px;
+		}
+		.activity_certificate .certificate_info li:nth-child(2) {
+			margin-top: 10px;
+		}
+		.activity_certificate .certificate_info li:nth-child(2) span strong {
+			margin-right: 5px;
+		}
+		.activity_certificate .certificate_info li:nth-child(3) {
+			display: flex;
+			align-items: center;
+			margin-top: 70px;
+			font-size: 25px;
+		}
+		.activity_certificate .certificate_info li:nth-child(3) span {
+			display: block;
+			width: 100px;
+			height: 100px;
+			margin-left: 20px;
+			margin-bottom: 25px;
+		}
+		.activity_certificate .certificate_info li:nth-child(3) span img {
+			display: block;
+			width: 100%;
+		}
+
+		.tbl_column {
+			border-top: 2px solid #000;
+		}
+		.tbl_column table {
+			width: 100%;
+		}
+		table caption {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		.tbl_column table tbody tr {
+			background-color: rgba(255,255,255,.8);
+		}
+		.tbl_column table tbody tr th {
+			background-color: #eee;
+			border-bottom: 1px dashed #dfdfdf;
+			text-align: left;
+			padding: 11px 10px;
+			box-sizing: border-box;
+			vertical-align: middle;
+			font-weight: 400;
+		}
+		.tbl_column table tbody tr th label span {
+			display: block;
+			line-height: 5px;
+			font-size: 17px;
+		}
+		.tbl_column table tbody tr th label span.req {
+			display: inline-block;
+		}
+		.tbl_column table tbody tr td {
+			border-right: 1px solid #E5E5E5;
+			border-bottom: 1px solid #E5E5E5;
+			line-height: 46px;
+			padding: 5px 10px;
+			vertical-align: middle;
+			font-size: 14px;
+			color: #787878;
+		}
+		.tbl_column table tbody tr td:last-child {
+			border-right: none;
+		}
+		.tbl_column table tbody tr:last-child th {
+			border-bottom: 1px solid #E5E5E5;
+		}
+		.req::after {
+			content: "*";
+			color: #EC6818;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="activity_certificate">
+                    
+		<h3>활동증명서</h3>
+
+		<div class="tbl_column">
+			<table>
+				<caption>회원가입 폼</caption>
+				<colgroup>
+					<col width="20%">
+					<col width="*">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">성명</th>
+						<td class="agn_c">홍 길 동</td>
+					</tr>
+					<tr>
+						<th scope="row">생년월일</th>
+						<td class="agn_c">1993년 02월 12일</td>
+					</tr>
+					<tr>
+						<th scope="row">기관명</th>
+						<td class="agn_c">한국생명존중희망재단</td>
+					</tr>
+					<tr>
+						<th scope="row">활동기간</th>
+						<td class="agn_c">2022년 02월 25일 ~ 2022년 02월 28일</td>
+					</tr>
+					<tr>
+						<th scope="row">활동명</th>
+						<td class="agn_c">미디어 자살정보 모니터링단 지켜줌인(人)</td>
+					</tr>
+					<tr>
+						<th scope="row">활동내용</th>
+						<td class="agn_c">미디어 자살 정보 모니터링 및 신고</td>
+					</tr>
+					<tr>
+						<th scope="row">용도</th>
+						<td class="agn_c">활동 인증</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<ul class="certificate_info">
+			<li>상기와 같이 활동하였음을 증명합니다.</li>
+			<li>
+				<span><strong>2022</strong>년</span>
+				<span><strong>02</strong>월</span>
+				<span><strong>25</strong>일</span>
+			</li>
+			<li>
+				한국생명존중희망재단 이사장
+				<span><img src="./images/ico/img_seal.png" alt="한국생명존중희망재단 이사장인"></span>
+			</li>
+		</ul>
+
+	</div>
+
+</body>
+</html>

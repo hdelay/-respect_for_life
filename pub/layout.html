@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+        
+</head>
+<body>
+    <div class="wrap">
+        <!-- skip nav -->
+        <div class="skip_nav" title="스킵 네비게이션">
+            <ul>
+                <li><a href="#conteiner" title="본문 바로가기">본문 바로가기</a></li>
+                <li><a href="#nav" title="메뉴 바로가기">메뉴 바로가기</a></li>
+            </ul>
+        </div>
+
+        <!-- header -->
+        <header>
+            <div class="inner">
+                <h1 class="logo"><a href="" title="한국생명존중희망재단">한국생명존중희망재단</a></h1>
+                <div class="navigation">
+                    <div class="info">
+                        <div class="info_txt">
+                            <span>홍길동</span>님 반갑습니다.
+                        </div>
+                        <ul>
+                            <li><a href="./SC-1602.html" title="정보수정">정보수정</a></li>
+                            <!-- <li><a href="./SC-1002.html" title="로그인">로그인</a></li> -->
+                            <li><a href="./SC-1603.html" title="로그아웃">로그아웃</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="사업안내">사업안내</a>
+                                <ul>
+                                    <li><a href="./SC-1101.html" title="지켜줌인(人)">지켜줌인(人)</a></li>
+                                    <li><a href="./SC-1102.html" title="집중클리닝">집중클리닝</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="지켜줌인(자살유발정보)">지켜줌인(자살유발정보)</a>
+                                <ul>
+                                    <li><a href="./SC-1200.html" title="교육수강">교육수강</a></li>
+                                    <li><a href="./SC-1201.html" title="활동하기">활동하기</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="지켜줌인(영상콘텐츠)">지켜줌인(영상콘텐츠)</a>
+                                <ul>
+                                    <li><a href="./SC-1300.html" title="교육수강">교육수강</a></li>
+                                    <li><a href="./SC-1301.html" title="활동하기">활동하기</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="집중클리닝 활동">집중클리닝 활동</a>
+                                <ul>
+                                    <li><a href="./SC-1401.html" title="교육수강">교육수강</a></li>
+                                    <li><a href="./SC-1402.html" title="참여하기">참여하기</a></li>
+                                    <li><a href="./SC-1404.html" title="수기공모">수기공모</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="공지사항">공지사항</a>
+                                <ul>
+                                    <li><a href="./SC-1501.html" title="공지사항">공지사항</a></li>
+                                    <li><a href="./SC-1503.html" title="FAQ">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="마이페이지">마이페이지</a>
+                                <ul>
+                                    <li><a href="./SC-1602.html" title="정보수정">정보수정</a></li>
+                                    <li><a href="./SC-1603.html" title="활동증명서">활동증명서</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- 모바일 전체메뉴 -->
+            <a href="javascript:void(0);" class="all_menu_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <nav class="all_menu">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" title="사업안내">사업안내</a>
+                        <ul>
+                            <li><a href="./SC-1101.html" title="지켜줌인(人)">지켜줌인(人)</a></li>
+                            <li><a href="./SC-1102.html" title="집중클리닝">집중클리닝</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="지켜줌인(자살유발정보)">지켜줌인(자살유발정보)</a>
+                        <ul>
+                            <li><a href="./SC-1200.html" title="교육수강">교육수강</a></li>
+                            <li><a href="./SC-1201.html" title="활동하기">활동하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="지켜줌인(영상콘텐츠)">지켜줌인(영상콘텐츠)</a>
+                        <ul>
+                            <li><a href="./SC-1300.html" title="교육수강">교육수강</a></li>
+                            <li><a href="./SC-1301.html" title="활동하기">활동하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="집중클리닝 활동">집중클리닝 활동</a>
+                        <ul>
+                            <li><a href="./SC-1401.html" title="교육수강">교육수강</a></li>
+                            <li><a href="./SC-1402.html" title="참여하기">참여하기</a></li>
+                            <li><a href="./SC-1404.html" title="수기공모">수기공모</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="공지사항">공지사항</a>
+                        <ul>
+                            <li><a href="./SC-1501.html" title="공지사항">공지사항</a></li>
+                            <li><a href="./SC-1503.html" title="FAQ">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="마이페이지">마이페이지</a>
+                        <ul>
+                            <li><a href="./SC-1602.html" title="정보수정">정보수정</a></li>
+                            <li><a href="./SC-1603.html" title="활동증명서">활동증명서</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- container -->
+        <div id="conteiner" class="container">
+
+            <div class="inner">
+
+                <h2><strong>자살유발정보신고</strong></h2>
+
+                <div class="search_form">
+                    
+                    <dl>
+                        <dt>검색기간</dt>
+                        <dd>
+                            <div class="rdo_group">
+                                <span>
+                                    <input type="radio" id="radio_01" name="radio_group">
+                                    <label for="radio_01">선택</label>
+                                </span>
+                                <span>
+                                    <input type="radio" id="radio_02" name="radio_group">
+                                    <label for="radio_02">선택</label>
+                                </span>
+                                <span class="mob_width100">
+                                    <span class="rdo_group_muti">
+                                        <input type="radio" id="radio_03" name="radio_group">
+                                        <label for="radio_03">선택</label>
+                                    </span>
+                                    <div class="datepicker_group">
+                                        <span>
+                                            <label for="input_02" class="blind">날짜선택</label>
+                                            <input type="text" id="input_03" class="datepicker_day">
+                                        </span>
+                                        <span>~</span>
+                                        <span>
+                                            <label for="input_02" class="blind">날짜선택</label>
+                                            <input type="text" id="input_04" class="datepicker_day">
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>사이트명</dt>
+                        <dd>
+                            <div class="input_group">
+                                <div class="selectbox">
+                                    <label for="select_01" class="blind">선택</label>
+                                    <select name="" id="select_01">
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                    </select>
+                                </div>
+                                <div class="inputbox">
+                                    <label for="input_01" class="blind">선택</label>
+                                    <input type="text" id="input_01">
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+
+                    <div class="btn_center">
+                        <button class="btn_circle black">검색</button>
+                    </div>
+
+                </div>
+
+                <div class="btn_right">
+                    <button class="btn_square line">엑셀양식 받기</button>
+                    <button class="btn_square black">신고등록</button>
+                </div>
+                <div class="tbl_row">
+                    <table>
+                        <caption>데이타 폼</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">제목</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">제목</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="paging">
+                    <ul>
+                        <li><a href="" class="prev_more" title="최신페이지로 이동">최신페이지로 이동</a></li>
+                        <li><a href="" class="prev" title="이전페이지로 이동">이전페이지로 이동</a></li>
+                        <li class="on"><a href="" title="1 페이지로 이동">1</a></li>
+                        <li><a href="" title="2 페이지로 이동">2</a></li>
+                        <li><a href="" title="3 페이지로 이동">3</a></li>
+                        <li><a href="" title="4 페이지로 이동">4</a></li>
+                        <li><a href="" title="5 페이지로 이동">5</a></li>
+                        <li><a href="" title="6 페이지로 이동">6</a></li>
+                        <li><a href="" title="7 페이지로 이동">7</a></li>
+                        <li><a href="" title="8 페이지로 이동">8</a></li>
+                        <li><a href="" title="9 페이지로 이동">9</a></li>
+                        <li><a href="" title="10 페이지로 이동">10</a></li>
+                        <li><a href="" class="next" title="다음페이지로 이동">다음페이지로 이동</a></li>
+                        <li><a href="" class="next_more" title="마지막페이지로 이동">마지막페이지로 이동</a></li>
+                    </ul>
+                </div>
+                <div class="paging mob">
+                    <ul>
+                        <li><a href="" class="prev_more" title="최신페이지로 이동">최신페이지로 이동</a></li>
+                        <li><a href="" class="prev" title="이전페이지로 이동">이전페이지로 이동</a></li>
+                        <li class="on"><a href="" title="1 페이지로 이동">1</a></li>
+                        <li><a href="" title="2 페이지로 이동">2</a></li>
+                        <li><a href="" title="3 페이지로 이동">3</a></li>
+                        <li><a href="" title="4 페이지로 이동">4</a></li>
+                        <li><a href="" title="5 페이지로 이동">5</a></li>
+                        <li><a href="" class="next" title="다음페이지로 이동">다음페이지로 이동</a></li>
+                        <li><a href="" class="next_more" title="마지막페이지로 이동">마지막페이지로 이동</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <div class="inner">
+                <h2><a href="" title="한국생명존중희망재단">한국생명존중희망재단</a></h2>
+                <ul>
+                    <li>서울특별시 중구 을지로 6 재능빌딩 15층 교육운영팀 (을지로1가 192-11)</li>
+                    <li>Tel : 02-3706-0423~4 Fax : 02-3706-0402 E-mail : edu@kfsp.org</li>
+                    <li>Copyright(c) 2021 한국생명존중희망재단 All Rights Reserved</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

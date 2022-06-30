@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자살유발정보 예방 및 차단사업 시스템 퍼블리싱 가이드</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+
+    <!-- zTree -->
+    <link rel="stylesheet" href="./css/demo.css" type="text/css">
+	<link rel="stylesheet" href="./css/zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="./js/jquery.ztree.core.js"></script>
+
+    <style>
+        .wrap {
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .wrap > dl {
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid #ddd;
+        }
+        .wrap > dl + dl {
+            margin-top: 20px;
+        }
+        .wrap > dl > dt {
+            width: 100%;
+            font-size: 30px;
+            text-align: center;
+            background-color: #ddd;
+            color: #aaa;
+            padding: 10px 0;
+        }
+        .wrap > dl > dd {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 메뉴 카테고리 */
+        .menu_category_list {
+            padding: 30px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+        }
+        .menu_category_list a {
+            display: inline-block;
+            align-items: center;
+            font-size: 15px;
+            padding: 3px 5px;
+        }
+        .menu_category_list a:hover {
+            background-color: #f5f5f5 !important;
+            text-decoration: underline;
+        }
+        .menu_category_list > ul > li {
+            position: relative;
+            padding-left: 24px;
+            background: url(./images/ico/ico_folder_m.svg) no-repeat left 7px;
+            background-size: 18px;
+        }
+        .menu_category_list > ul > li::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 26px;
+            left: 8px;
+            width: 1px;
+            height: calc(100% - 26px);
+            background: url(./images/ico/ico_folder_dot02.png) repeat-y left top;
+        }
+        .menu_category_list > ul > li.depth_ac {
+            background: url(./images/ico/ico_folder_p.svg) no-repeat left 7px;
+            background-size: 18px;
+        }
+        .menu_category_list > ul > li.depth_ac.depth_on {
+            background: url(./images/ico/ico_folder_m.svg) no-repeat left 7px;
+            background-size: 18px;
+        }
+        .menu_category_list > ul > li.depth_ac > a {
+            padding-left: 24px;
+            background: url(./images/ico/ico_folder_close.svg) no-repeat left center;
+            background-size: 21px;
+        }
+        .menu_category_list > ul > li.depth_on > a {
+            background: url(./images/ico/ico_folder_open.svg) no-repeat left center;
+            background-size: 21px;
+        }
+
+        /* 2depth */
+        .menu_category_list > ul > li > ul {
+            display: none;
+        }
+        .menu_category_list > ul > li > ul > li {
+            position: relative;
+            padding-left: 24px;
+        }
+        .menu_category_list > ul > li > ul > li::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 8px;
+            width: 24px;
+            height: 24px;
+            background: url(./images/ico/ico_folder_dot.png) no-repeat left center;
+        }
+        .menu_category_list > ul > li > ul > li:last-child:before {
+            background: url(./images/ico/ico_folder_dot_last.png) no-repeat left center;
+        }
+        .menu_category_list > ul > li > ul > li::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 26px;
+            left: 8px;
+            width: 1px;
+            height: calc(100% - 26px);
+            background: url(./images/ico/ico_folder_dot02.png) repeat-y left top;
+        }
+        .menu_category_list > ul > li > ul > li.depth_ac > a {
+            padding-left: 24px;
+            background: url(./images/ico/ico_folder_close.svg) no-repeat left center;
+            background-size: 21px;
+        }
+        .menu_category_list > ul > li > ul > li.depth_on > a {
+            background: url(./images/ico/ico_folder_open.svg) no-repeat left center;
+            background-size: 21px;
+        }
+
+        /* 3depth */
+        .menu_category_list > ul > li > ul > li > ul {
+            display: none;
+        }
+        .menu_category_list > ul > li > ul > li > ul > li {
+            position: relative;
+            padding-left: 24px;
+        }
+        .menu_category_list > ul > li > ul > li > ul > li::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 8px;
+            width: 24px;
+            height: 24px;
+            background: url(./images/ico/ico_folder_dot.png) no-repeat left center;
+        }
+        .menu_category_list > ul > li > ul > li > ul > li:last-child:before {
+            background: url(./images/ico/ico_folder_dot_last.png) no-repeat left center;
+        }
+        .menu_category_list > ul > li > ul > li > ul > li::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 26px;
+            left: 8px;
+            width: 1px;
+            height: calc(100% - 26px);
+            background: url(./images/ico/ico_folder_dot02.png) repeat-y left top;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap container">
+        <!-- 제목 -->
+        <dl>
+            <dt>제목</dt>
+            <dd>
+                <ul>
+                    <li>
+                        <h2>h2제목</h2>
+                    </li>
+                    <li>
+                        <h3>h3제목</h3>
+                    </li>
+                    <li>
+                        <div class="title_group">
+                            <div class="left">
+                                <h3>제목 + 버튼</h3>
+                            </div>
+                            <div class="right">
+                                <button class="btn_square blue">저장</button>
+                                <button class="btn_square line">취소</button>
+                                <button class="btn_square line">엑셀 내려받기</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <!-- 버튼 -->
+        <dl>
+            <dt>버튼</dt>
+            <dd>
+                <ul>
+                    <li>
+                        1. 가운데 정렬
+                        <div class="btn_center">
+                            <button class="btn_square line">엑셀양식 받기</button>
+                            <button class="btn_square black">신고등록</button>
+                        </div>
+                    </li>
+                    <li>
+                        2. 오른쪽 정렬
+                        <div class="btn_right">
+                            <button class="btn_circle black">검색</button>
+                        </div>
+                    </li>
+                    <li>
+                        2. 큰 버튼
+                        <div class="btn_center">
+                            <button class="btn_circle black big">검색</button>
+                            <button class="btn_square line big">엑셀양식 받기</button>
+                            <button class="btn_square black big">신고등록</button>
+                        </div>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+
+        <!-- 라디오 버튼 -->
+        <dl>
+            <dt>라디오 버튼</dt>
+            <dd>
+                <div class="rdo_group">
+                    <input type="radio" id="radio_01">
+                    <label for="radio_01">단일</label>
+                </div>
+                <div class="rdo_group">
+                    <span>
+                        <input type="radio" id="radio_02" name="radio_group">
+                        <label for="radio_02">선택</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="radio_03" name="radio_group">
+                        <label for="radio_03">선택</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="radio_04" name="radio_group">
+                        <label for="radio_04">선택</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="radio_05" name="radio_group">
+                        <label for="radio_05">선택</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="radio_06" name="radio_group" disabled>
+                        <label for="radio_06">선택</label>
+                    </span>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 체크박스 -->
+        <dl>
+            <dt>체크박스</dt>
+            <dd>
+                <div class="chk_group">
+                    <input type="checkbox" id="checkbox_01">
+                    <label for="checkbox_01">단일</label>
+                </div>
+                <div class="chk_group">
+                    <span>
+                        <input type="checkbox" id="checkbox_02" name="checkbox_group">
+                        <label for="checkbox_02">선택</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="checkbox_03" name="checkbox_group">
+                        <label for="checkbox_03">선택</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="checkbox_04" name="checkbox_group">
+                        <label for="checkbox_04">선택</label>
+                    </span>
+                    <span>
+                        
+                        <input type="checkbox" id="checkbox_05" name="checkbox_group">
+                        <label for="checkbox_05">선택</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="checkbox_06" name="checkbox_group" disabled>
+                        <label for="checkbox_06">선택</label>
+                    </span>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 셀렉트박스 -->
+        <dl>
+            <dt>셀렉트 박스</dt>
+            <dd>
+                <div class="selectbox">
+                    <label for="select_01" class="blind">선택</label>
+                    <select name="" id="select_01">
+                        <option value="">전체선택</option>
+                        <option value="">전체선택</option>
+                        <option value="">전체선택</option>
+                    </select>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 데이트피커 -->
+        <dl>
+            <dt>데이트피커</dt>
+            <dd>
+                <div class="inputbox">
+                    <label for="input_01" class="blind">선택</label>
+                    <input type="text" id="input_01">
+                </div>
+                <div class="datepicker_group solo">
+                    <span>
+                        <label for="input_02" class="blind">날짜선택</label>
+                        <input type="text" id="input_02" class="datepicker_day">
+                    </span>
+                </div>
+
+                <div class="datepicker_group">
+                    <span>
+                        <label for="input_2" class="blind">날짜선택</label>
+                        <input type="text" id="input_2" class="datepicker_start">
+                    </span>
+                    <span>~</span>
+                    <span>
+                        <label for="input_3" class="blind">날짜선택</label>
+                        <input type="text" id="input_3" class="datepicker_end">
+                    </span>
+                </div>
+
+                <div class="datepicker_group solo">
+                    <span>
+                        <label for="input_066" class="blind">날짜선택</label>
+                        <input type="text" id="input_066" class="datepicker_month" displayFormat="yyyy-MM">
+                    </span>
+                </div>
+                
+            </dd>
+        </dl>
+
+        <!-- 테이블 -->
+        <dl>
+            <dt>테이블</dt>
+            <dd>
+                <h3>데이터 폼</h3>
+                <div class="tbl_row">
+                    <table>
+                        <caption>데이타 폼</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" rowspan="2" class="bb_n">제목</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">제목</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">제목</th>
+                                <th scope="col" colspan="2">제목</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td rowspan="3">내용</td>
+                            </tr>
+                            <tr>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" colspan="2">내용</td>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br/><br/>
+
+                <h3>2컬럼 폼</h3>
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="10%"/>
+                            <col width="20%"/>
+                            <col width="10%"/>
+                            <col width=""/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br/><br/>
+
+                <h3>4컬럼 폼</h3>
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="15%"/>
+                            <col width="30%"/>
+                            <col width="15%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" rowspan="2">제목</th>
+                                <td>내용</td>
+                                <th scope="row">제목</th>
+                                <td>내용</td>
+                            </tr>
+                            <tr>
+                                <td>내용</td>
+                                <th scope="row" rowspan="2" class="bb">제목</th>
+                                <td rowspan="2">내용</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td class="br">내용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <br/><br/>
+
+                <h3>min-width 800 폼</h3>
+                <div class="tbl_row tbl_min">
+                    <table>
+                        <caption>데이타 폼</caption>
+                        <colgroup>
+                            <col width="70px;"/>
+                            <col width="150px;"/>
+                            <col width="150px;"/>
+                            <col width="150px;"/>
+                            <col width="150px;"/>
+                            <col width="400px;"/>
+                            <col width="100px;"/>
+                            <col width="150px;"/>
+                            <col width="500px;"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">구분</th>
+                                <th scope="col">사이트 분류</th>
+                                <th scope="col">사이트명</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">긴급구조대상자</th>
+                                <th scope="col">신고사유</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 입력폼 -->
+        <dl>
+            <dt>입력폼</dt>
+            <dd>
+                <h3>검색폼</h3>
+                <div class="search_form">
+                    
+                    <div class="search_group">
+                        <dl>
+                            <dt>검색기간</dt>
+                            <dd>
+                                <div class="rdo_group">
+                                    <span>
+                                        <input type="radio" id="radio_01" name="radio_group">
+                                        <label for="radio_01">선택</label>
+                                    </span>
+                                    <span>
+                                        <input type="radio" id="radio_02" name="radio_group">
+                                        <label for="radio_02">선택</label>
+                                    </span>
+                                    <span class="mob_width100">
+                                        <span class="rdo_group_muti">
+                                            <input type="radio" id="radio_03" name="radio_group">
+                                            <label for="radio_03">선택</label>
+                                        </span>
+                                        <div class="datepicker_group">
+                                            <span>
+                                                <label for="input_02" class="blind">날짜선택</label>
+                                                <input type="text" id="input_03" class="datepicker_day">
+                                            </span>
+                                            <span>~</span>
+                                            <span>
+                                                <label for="input_02" class="blind">날짜선택</label>
+                                                <input type="text" id="input_04" class="datepicker_day">
+                                            </span>
+                                        </div>
+                                    </span>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>사이트명</dt>
+                            <dd>
+                                <div class="input_group">
+                                    <div class="selectbox">
+                                        <label for="select_01" class="blind">선택</label>
+                                        <select name="" id="select_01">
+                                            <option value="">전체선택</option>
+                                            <option value="">전체선택</option>
+                                            <option value="">전체선택</option>
+                                        </select>
+                                    </div>
+                                    <div class="inputbox">
+                                        <label for="input_01" class="blind">선택</label>
+                                        <input type="text" id="input_01">
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="half">
+                            <dt>half</dt>
+                            <dd>
+                                <div class="selectbox solo">
+                                    <label for="select_01" class="blind">선택</label>
+                                    <select name="" id="select_01">
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="half">
+                            <dt>half</dt>
+                            <dd>
+                                <div class="selectbox solo">
+                                    <label for="select_01" class="blind">선택</label>
+                                    <select name="" id="select_01">
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="one_third">
+                            <dt>one_third</dt>
+                            <dd>
+                                <div class="selectbox solo">
+                                    <label for="select_01" class="blind">선택</label>
+                                    <select name="" id="select_01">
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="one_third">
+                            <dt>one_third</dt>
+                            <dd>
+                                <div class="selectbox solo">
+                                    <label for="select_01" class="blind">선택</label>
+                                    <select name="" id="select_01">
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="one_third">
+                            <dt>one_third</dt>
+                            <dd>
+                                <div class="selectbox solo">
+                                    <label for="select_01" class="blind">선택</label>
+                                    <select name="" id="select_01">
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                        <option value="">전체선택</option>
+                                    </select>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="btn_center">
+                        <button class="btn_circle black">검색</button>
+                    </div>
+
+                </div>
+            </dd>
+            <dd>
+                <h3>회원가입(팝업있음)</h3>
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="radio_001">활동 구분<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="rdo_group">
+                                        <span>
+                                            <input type="radio" id="radio_001" name="radio_group">
+                                            <label for="radio_001">미디어 자살정보 모니터링단 지켜줄인(人)</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="radio_002" name="radio_group">
+                                            <label for="radio_002">자살유발정보 집중클리닝</label>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_001">ID<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group input_btn">
+                                        <div class="inputbox">
+                                            <label for="input_001" class="blind">ID 입력</label>
+                                            <input type="text" id="input_001">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">중복확인</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_002">이름<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_002">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_003">비밀번호<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_003" class="blind">비밀번호 입력</label>
+                                            <input type="password" id="input_003">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_004">비밀번호 확인<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_004" class="blind">비밀번호 확인 입력</label>
+                                            <input type="password" id="input_004">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_005">주소<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_searchbtn">
+                                        <div class="inputbox">
+                                            <label for="input_005" class="blind">주소 입력</label>
+                                            <input type="text" id="input_005">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black btn_search modal_btn">돋보기</button>
+                                        </div>
+                                    </div>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_005" class="blind">나머지주소 입력</label>
+                                            <input type="text" id="input_005">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_006">이메일<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_email">
+                                        <div class="inputbox">
+                                            <label for="input_006" class="blind">이메일 아이디 입력</label>
+                                            <input type="text" id="input_006">
+                                        </div>
+                                        <span>@</span>
+                                        <div class="inputbox">
+                                            <label for="input_007" class="blind">이메일 뒷주소 입력</label>
+                                            <input type="text" id="input_007">
+                                        </div>
+                                        <div class="selectbox">
+                                            <label for="select_001" class="blind">이메일 뒷주소 선택</label>
+                                            <select name="" id="select_001">
+                                                <option value="">직접입력</option>
+                                                <option value="">naver.com</option>
+                                                <option value="">gmail.com</option>
+                                                <option value="">hanmail.com</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_002">전화번호<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group input_tell">
+                                        <div class="selectbox">
+                                            <label for="select_002" class="blind">전화번호 앞자리 선택</label>
+                                            <select name="" id="select_002">
+                                                <option value="">선택</option>
+                                                <option value="">010</option>
+                                                <option value="">031</option>
+                                                <option value="">042</option>
+                                            </select>
+                                        </div>
+                                        <div class="inputbox">
+                                            <label for="input_008" class="blind">전화번호 중간자리 입력</label>
+                                            <input type="text" id="input_008">
+                                        </div>
+                                        <div class="inputbox">
+                                            <label for="input_009" class="blind">전화번호 뒷자리 입력</label>
+                                            <input type="text" id="input_009">
+                                        </div>
+                                        
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_010">생년월일<span class="req"></span></label></th>
+                                <td>
+                                    <div class="datepicker_group solo">
+                                        <span>
+                                            <label for="input_010" class="blind">날짜선택</label>
+                                            <input type="text" id="input_010" class="datepicker_day">
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_011">1365ID<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_011" class="blind">1365ID 입력</label>
+                                            <input type="text" id="input_011">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </dd>
+            <dd>
+                <h3>신고정보 입력(팝업있음)</h3>
+                <div class="tbl_column">
+                    <table>
+                        <caption>자살유발정보/유해정보 등록 테이블</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="radio_01">구분</label></th>
+                                <td colspan="3">
+                                    <div class="input_group radio_help">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_01" name="radio_group">
+                                                <label for="radio_01">자살유발정보</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_02" name="radio_group">
+                                                <label for="radio_02">유해정보</label>
+                                            </span>
+                                        </div>
+                                        <div class="help_group">
+                                            <span>자살유발정보/유해정보는 어떻게 구분하나요?</span>
+                                            <button class="btn_square black btn_search">돋보기</button>
+                                            <div class="help_content">
+                                                <dl>
+                                                    <dt>자살유발정보 유형 예시</dt>
+                                                    <dd>
+                                                        자살위해물건판매 또는 활용에 관한 정보
+                                                        <ul>
+                                                            <li>자살수단으로 사용되는 독극물, 약물, 도구 등 자살위해물건을 판매하거나 활용 방법을 제시하여 자살의지를 발생/구체화 시키는 정보를말합니다.</li>
+                                                        </ul>
+                                                    </dd>
+                                                    <dd>
+                                                        모니터링 검색 방법 : 
+                                                        <span>#자살약</span>
+                                                        <span>#수면제</span>
+                                                        <span>#제초제</span>
+                                                        <span>#시인화칼륨</span>
+                                                        <span>#농약</span>
+                                                        <span>#청산가리</span>
+                                                        <span>#그라목손</span>
+                                                        <span>#펜토바리베탈</span>
+                                                        <span>#넴뷰탈</span>
+                                                        <span>#농약</span>
+                                                        <ul>
+                                                            <li><img src="./images/content/img_help_content_01.png" alt="그림예시1"></li>
+                                                            <li><img src="./images/content/img_help_content_02.png" alt="그림예시2"></li>
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>계도 및 유포확산 방지 대상의 정보</dt>
+                                                    <dd>해당 정보는 자살예방법에 따른 자살유발정보로 볼 수 없지만 생명존중문화에 부정적인 영향을 미칠 것이 유려되어 계도와 유포확산 방지의 대상이라고 볼 수 있습니다.</dd>
+                                                    <dd>하지만 <span>자해사진 및 동영상 정보의 경우는 자살유발정보와 함께 반드시 신고 진행</span></dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>계도 및 유포확산 방지 대상의 정보 예시</dt>
+                                                    <dd>
+                                                        <ul>
+                                                            <li>
+                                                                <strong>신고 대상</strong>
+                                                                <img src="./images/content/img_help_content_03.png" alt="">
+                                                                <span>자해 사진/동영상</span>
+                                                            </li>
+                                                            <li>
+                                                                <strong>신고 대상 아님</strong>
+                                                                <img src="./images/content/img_help_content_04.png" alt="">
+                                                                <span>막연한 자살/우울 표현</span>
+                                                            </li>
+                                                            <li>
+                                                                <strong>신고 대상</strong>
+                                                                <img src="./images/content/img_help_content_05.png" alt="">
+                                                                <span>자살 미화/희화</span>
+                                                            </li>
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_01">자살유발정보 분류<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_01">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_02">유해정보 분류<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_02">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_03">사이트 분류<span class="req"></span></label></th>
+                                <td>
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_03">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="select_04">사이트명<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group select_input">
+                                        <div class="selectbox">
+                                            <select name="" id="select_04">
+                                                <option value="">내용</option>
+                                                <option value="">내용</option>
+                                                <option value="">내용</option>
+                                            </select>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_01">URL<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_btn">
+                                        <div class="inputbox">
+                                            <label for="input_01" class="blind">ID 입력</label>
+                                            <input type="text" id="input_01">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">입력확인</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_05">게시 형태<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_05">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_06">자살위해물건 정보</label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_06">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="file_01">신고 이미지 첨부<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group file_btn">
+                                        <div class="filebox">
+                                            <input type="text" value="첨부파일" placeholder="첨부파일" class="filebox_val">
+                                            <input type="file" id="file_01" class="filebox_input">
+                                            <label for="file_01" class="btn_square black">파일찾기</label>
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">파일삭제</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </dd>
+            <dd>
+                <h3>신고정보 입력2</h3>
+                <div class="tbl_column">
+                    <table>
+                        <caption>긴급구조대상자 신고</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="select_07">신고사유</label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_07">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_03">이름</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_03" name="radio_group">
+                                                <label for="radio_03">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_04" name="radio_group">
+                                                <label for="radio_04">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="radio_05">연락처</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_05" name="radio_group">
+                                                <label for="radio_05">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_06" name="radio_group">
+                                                <label for="radio_06">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_07">성별</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_07" name="radio_group">
+                                                <label for="radio_07">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_08" name="radio_group">
+                                                <label for="radio_08">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="radio_09">ID</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_09" name="radio_group">
+                                                <label for="radio_09">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_10" name="radio_group">
+                                                <label for="radio_10">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_11">나이</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_11" name="radio_group">
+                                                <label for="radio_11">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_12" name="radio_group">
+                                                <label for="radio_12">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="radio_13">지역</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_13" name="radio_group">
+                                                <label for="radio_13">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_14" name="radio_group">
+                                                <label for="radio_14">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_15">기타정보</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_15" name="radio_group">
+                                                <label for="radio_15">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_16" name="radio_group">
+                                                <label for="radio_16">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for=""></label></th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 페이징 -->
+        <dl>
+            <dt>페이징</dt>
+            <dd>
+                <div class="paging">
+                    <ul>
+                        <li><a href="" class="prev_more" title="최신페이지로 이동">최신페이지로 이동</a></li>
+                        <li><a href="" class="prev" title="이전페이지로 이동">이전페이지로 이동</a></li>
+                        <li class="on"><a href="" title="1 페이지로 이동">1</a></li>
+                        <li><a href="" title="2 페이지로 이동">2</a></li>
+                        <li><a href="" title="3 페이지로 이동">3</a></li>
+                        <li><a href="" title="4 페이지로 이동">4</a></li>
+                        <li><a href="" title="5 페이지로 이동">5</a></li>
+                        <li><a href="" title="6 페이지로 이동">6</a></li>
+                        <li><a href="" title="7 페이지로 이동">7</a></li>
+                        <li><a href="" title="8 페이지로 이동">8</a></li>
+                        <li><a href="" title="9 페이지로 이동">9</a></li>
+                        <li><a href="" title="10 페이지로 이동">10</a></li>
+                        <li><a href="" class="next" title="다음페이지로 이동">다음페이지로 이동</a></li>
+                        <li><a href="" class="next_more" title="마지막페이지로 이동">마지막페이지로 이동</a></li>
+                    </ul>
+                </div>
+                <div class="paging mob">
+                    <ul>
+                        <li><a href="" class="prev_more" title="최신페이지로 이동">최신페이지로 이동</a></li>
+                        <li><a href="" class="prev" title="이전페이지로 이동">이전페이지로 이동</a></li>
+                        <li class="on"><a href="" title="1 페이지로 이동">1</a></li>
+                        <li><a href="" title="2 페이지로 이동">2</a></li>
+                        <li><a href="" title="3 페이지로 이동">3</a></li>
+                        <li><a href="" title="4 페이지로 이동">4</a></li>
+                        <li><a href="" title="5 페이지로 이동">5</a></li>
+                        <li><a href="" class="next" title="다음페이지로 이동">다음페이지로 이동</a></li>
+                        <li><a href="" class="next_more" title="마지막페이지로 이동">마지막페이지로 이동</a></li>
+                    </ul>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 탭 -->
+        <dl>
+            <dt>탭</dt>
+            <dd>
+                <div class="tab_group">
+                    <ul>
+                        <li class="on"><a href="" rel="tab_content_01">탭버튼</a></li>
+                        <li><a href="" rel="tab_content_02">탭버튼</a></li>
+                        <li><a href="" rel="tab_content_03">탭버튼</a></li>
+                    </ul>
+                    <div class="tab_content">
+                        <div class="on tab_content_01">
+                            <div class="tab_group">
+                                <ul>
+                                    <li class="on"><a href="" rel="tab_content_08">탭버튼</a></li>
+                                    <li><a href="" rel="tab_content_09">탭버튼</a></li>
+                                    <li><a href="" rel="tab_content_10">탭버튼</a></li>
+                                </ul>
+                                <div class="tab_content">
+                                    <div class="on tab_content_08">
+                                        s1111111111111
+                                    </div>
+                                    <div class="tab_content_09">내용2</div>
+                                    <div class="tab_content_10">내용3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab_content_02">내용2</div>
+                        <div class="tab_content_03">내용3</div>
+                    </div>
+                </div>
+                <div class="tab_group">
+                    <ul>
+                        <li class="on"><a href="" rel="tab_content_04">탭버튼</a></li>
+                        <li><a href="" rel="tab_content_05">탭버튼</a></li>
+                        <li><a href="" rel="tab_content_06">탭버튼</a></li>
+                    </ul>
+                    <div class="tab_content">
+                        <div class="on tab_content_04">내용1</div>
+                        <div class="tab_content_05">내용2</div>
+                        <div class="tab_content_06">내용3</div>
+                    </div>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 팝업 -->
+        <dl>
+            <dt>팝업</dt>
+            <dd>
+                <div class="btn_center">
+                    <button class="btn_circle black modal_btn">112 문자신고</button>
+                    <button class="btn_square black modal_btn">주소찾기</button>
+                    <button class="btn_square line modal_btn">알림1</button>
+                    <button class="btn_circle line modal_btn">알림2</button>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 박스 -->
+        <dl>
+            <dt>박스</dt>
+            <dd>
+                <div class="txtbox">
+                    <ul>
+                        <li>텍스트박스</li>
+                        <li>텍스트박스</li>
+                        <li>텍스트박스</li>
+                    </ul>
+                </div>
+            </dd>
+        </dl>
+
+        <!-- 트리메뉴 -->
+        <dl>
+            <dt>트리메뉴</dt>
+            <dd>
+                zTreeMenu
+                <div class="menu_category">
+                    <ul id="treeDemo" class="ztree"></ul>
+                </div>
+            </dd>
+            <dd>
+                메뉴카테고리
+                <!-- 메뉴 카테고리 -->
+
+                <div class="menu_category_list">
+                    <ul>
+                        <li class="depth_ac">
+                            <a href="javascript:void(0);">공통기능관리</a>
+                            <ul>
+                                <li class="depth_ac">
+                                    <a href="javascript:void(0);">2depth</a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                    </ul>
+                                </li>
+                                <li class="depth_ac">
+                                    <a href="javascript:void(0);">2depth</a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                                <li class="depth_ac">
+                                    <a href="javascript:void(0);">2depth</a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="depth_ac">
+                            <a href="javascript:void(0);">1depth</a>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                        <li><a href="javascript:void(0);">3depth</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">2depth</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">1depth</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">1depth</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">1depth</a>
+                        </li>
+                    </ul>
+                </div>
+            </dd>
+        </dl>
+
+    </div>
+
+    <!-- 주소찾기 팝업 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>주소찾기</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <ul class="address_search">
+                <li>
+                    <div class="rdo_group">
+                        <span>
+                            <input type="radio" id="radio_02" name="radio_group" checked>
+                            <label for="radio_02">도로명주소</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="radio_03" name="radio_group">
+                            <label for="radio_03">지번주소</label>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="input_group input_searchbtn">
+                        <div class="inputbox">
+                            <label for="input_005" class="blind">주소 입력</label>
+                            <input type="text" id="input_005">
+                        </div>
+                        <div class="btnbox">
+                            <button class="btn_square black btn_search">돋보기</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="address_result">
+                <div class="tbl_row">
+                    <table>
+                        <caption>데이타 폼</caption>
+                        <colgroup>
+                            <col width="20%;" class="mob_tblw"/>
+                            <col width="*" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">우편번호</th>
+                                <th scope="col">주소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 중산간동로7227번길 111-10</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 하례리 818-1</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="input_01">선택한 주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_01" readonly>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_02">상세주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_02">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle black">확인</button>
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+
+    <!-- 112 문자 신고 내용 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>112 문자 신고 내용</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <div class="message112_group">
+                <p>
+                    안녕하세요. <br/>
+                    저는 보건복지부 · 한국생명존중희망재단에서 자살유발정보를 모니터링하고 있는 ‘미디어 자살정보 모니터링단 지켜줌인으로 활동하는 ( <span>홍길동</span> )입니다.<br/><br/>
+                    아래의 사유로 인해 경찰의 도움이 필요하여 신고합니다.
+                </p>
+                <div class="message112_content">
+                    <dl>
+                        <dt>신고사유</dt>
+                        <dd>신고사유입니다.</dd>
+                    </dl>
+                    <dl>
+                        <dt>URL</dt>
+                        <dd>http://www.naver.com</dd>
+                    </dl>
+                    <dl>
+                        <dt>사이트명</dt>
+                        <dd>네이버</dd>
+                    </dl>
+                    <dl>
+                        <dt>이름</dt>
+                        <dd>홍길동</dd>
+                    </dl>
+                    <dl>
+                        <dt>성별</dt>
+                        <dd>여</dd>
+                    </dl>
+                    <dl>
+                        <dt>나이</dt>
+                        <dd>46세</dd>
+                    </dl>
+                    <dl>
+                        <dt>ID</dt>
+                        <dd>honggildong</dd>
+                    </dl>
+                    <dl>
+                        <dt>지역</dt>
+                        <dd>서울특별시 광진구 화양동 777-77</dd>
+                    </dl>
+                    <dl>
+                        <dt>기타정보</dt>
+                        <dd>기타정보 입니다.</dd>
+                    </dl>
+                </div>
+                <div class="message112_info">
+                    <ul>
+                        <li>기재된 정보 외에 추가 정보는 확인할 수 없었습니다.</li>
+                        <li>자세한 신고 내용은 첨부된 링크를 통해 확인 부탁드립니다.</li>
+                        <li>이 문자는 모니터링 시스템을 통해 신고되고 있으며, 개별 답신 수신이 불가능합니다. </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+
+    <!-- 주소찾기 팝업 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>주소찾기</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <ul class="address_search">
+                <li>
+                    <div class="rdo_group">
+                        <span>
+                            <input type="radio" id="radio_02" name="radio_group" checked>
+                            <label for="radio_02">도로명주소</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="radio_03" name="radio_group">
+                            <label for="radio_03">지번주소</label>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="input_group input_searchbtn">
+                        <div class="inputbox">
+                            <label for="input_005" class="blind">주소 입력</label>
+                            <input type="text" id="input_005">
+                        </div>
+                        <div class="btnbox">
+                            <button class="btn_square black btn_search">돋보기</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="address_result">
+                <div class="tbl_row">
+                    <table>
+                        <caption>데이타 폼</caption>
+                        <colgroup>
+                            <col width="20%;" class="mob_tblw"/>
+                            <col width="*" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">우편번호</th>
+                                <th scope="col">주소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 중산간동로7227번길 111-10</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 하례리 818-1</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="input_01">선택한 주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_01" readonly>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_02">상세주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_02">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle black">확인</button>
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+    
+    <!-- 알림팝업 1 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>알림팝업 1</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <div class="modal_content_txt">
+                <strong>정말로 탈퇴 하시겠습니까?</strong>
+                <span>탈퇴 시 활동 내용은 관리자에게 수집되며, 재가입 시 기존 활동 내용은 연계되지 않습니다.</span>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle black">탈퇴하기</button>
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+
+    <!-- 알림팝업 2 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>알림팝업 2</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <div class="modal_content_txt">
+                <!-- <strong>정말로 탈퇴 하시겠습니까?</strong> -->
+                <span>
+                    해당 건은 이미 긴급구조대상자 신고가 되었습니다.<br/>
+                    긴급구조대상자 신고 구분을 ‘무‘로 표시 부탁드립니다. 
+                </span>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+
+    <script>
+        var setting = {	};
+
+        var zNodes =[
+            { name:"pNode 01", open:true,
+                children: [
+                    { name:"pNode 11",
+                        children: [
+                            { name:"leaf node 111"},
+                            { name:"leaf node 112"},
+                            { name:"leaf node 113"},
+                            { name:"leaf node 114"}
+                        ]},
+                    { name:"pNode 12",
+                        children: [
+                            { name:"leaf node 121"},
+                            { name:"leaf node 122"},
+                            { name:"leaf node 123"},
+                            { name:"leaf node 124"}
+                        ]},
+                    { name:"pNode 13 - no child", isParent:true}
+                ]},
+            { name:"pNode 02",
+                children: [
+                    { name:"pNode 21", open:true,
+                        children: [
+                            { name:"leaf node 211"},
+                            { name:"leaf node 212"},
+                            { name:"leaf node 213"},
+                            { name:"leaf node 214"}
+                        ]},
+                    { name:"pNode 22",
+                        children: [
+                            { name:"leaf node 221"},
+                            { name:"leaf node 222"},
+                            { name:"leaf node 223"},
+                            { name:"leaf node 224"}
+                        ]},
+                    { name:"pNode 23",
+                        children: [
+                            { name:"leaf node 231"},
+                            { name:"leaf node 232"},
+                            { name:"leaf node 233"},
+                            { name:"leaf node 234"}
+                        ]}
+                ]},
+            { name:"pNode 3 - no child", isParent:true}
+
+        ];
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        });
+    </script>
+</body>
+</html>

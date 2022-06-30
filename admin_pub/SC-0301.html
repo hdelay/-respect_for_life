@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 자살정보 모니터링 시스템</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+    <div class="wrap">
+        <!-- skip nav -->
+        <div class="skip_nav" title="스킵 네비게이션">
+            <ul>
+                <li><a href="#conteiner" title="본문 바로가기">본문 바로가기</a></li>
+                <li><a href="#nav" title="메뉴 바로가기">메뉴 바로가기</a></li>
+            </ul>
+        </div>
+
+        <!-- header -->
+        <header>
+            <div class="header_left">
+                <h1><a href="">한국생명존중희망재단</a></h1>
+                <span>미디어 자살정보 모니터링 시스템</span>
+            </div>
+            <div class="header_right">
+                <div class="user_info">
+                    <span>사용자</span>님 반갑습니다!
+                </div>
+                <ul>
+                    <li class="modi"><a href="">정보수정</a></li>
+                    <!-- <li class="login"><a href="">로그인</a></li> -->
+                    <li class="logout"><a href="./SC-0101.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- aside -->
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">회원관리</a>
+                        <ul>
+                            <li><a href="./SC-0201.html">회원정보 관리</a></li>
+                            <li class="active">
+                                <a href="javascript:void(0);">봉사시간 관리</a>
+                                <ul>
+                                    <li><a href="./SC-0203.html">봉사시간 달력</a></li>
+                                    <li><a href="./SC-0204.html">1365 봉사자 목록</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./SC-0205.html">우수활동자 관리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">사업관리</a>
+                        <ul>
+                            <li><a href="./SC-0301.html">사업정보</a></li>
+                            <li><a href="./SC-0303.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0305.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0307.html">집중클리닝</a></li>
+                            <li><a href="./SC-0309.html">수기공모</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">게시판관리</a>
+                        <ul>
+                            <li><a href="./SC-0401.html">공지사항</a></li>
+                            <li><a href="./SC-0404.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">통계관리</a>
+                        <ul>
+                            <li><a href="./SC-0501.html">활동인원</a></li>
+                            <li><a href="./SC-0502.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0503.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0504.html">집중클리닝</a></li>
+                            <li><a href="./SC-0505.html">수기공모전</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">시스템관리</a>
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0);">서비스관리</a>
+                                <ul>
+                                    <li><a href="./SC-0600.html">배너 관리</a></li>
+                                    <li><a href="./SC-0601.html">메뉴 관리</a></li>
+                                    <li><a href="./SC-0602.html">공통코드 관리</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- container -->
+        <section class="container">
+
+            <div class="container_inner">
+
+                <h2>사업정보</h2>
+
+                <div class="search_form">
+                    
+                    <div class="search_group">
+                        <dl class="mg_0">
+                            <dt>사업명</dt>
+                            <dd>
+                                <div class="input_group">
+                                    <div class="inputbox">
+                                        <label for="input_01" class="blind">사업명 검색어 입력</label>
+                                        <input type="text" id="input_01">
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <div class="btn_center">
+                        <button class="btn_circle blue">검색</button>
+                    </div>
+
+                </div>
+
+
+                <div class="title_group">
+                    <div class="left">
+                        <!-- <button class="btn_square line">엑셀양식 받기</button> -->
+                    </div>
+                    <div class="right">
+                        <button class="btn_square line">엑셀 내려받기</button>
+                        <button class="btn_square blue">사업등록</button>
+                    </div>
+                </div>
+                
+                <div class="tbl_group">
+                    
+                    <!-- 테이블영역 -->
+                    <span>테이블영역</span>
+
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <h2><a href="">한국생명존중희망재단</a></h2>
+            <ul>
+                <li>서울특별시 중구 을지로 6 재능빌딩 15층 교육운영팀 (을지로1가 192-11)</li>
+                <li>Tel : 02-3706-0423~4 Fax : 02-3706-0402 E-mail : edu@kfsp.org</li>
+            </ul>
+        </footer>
+
+    </div>
+    
+    
+</body>
+</html>

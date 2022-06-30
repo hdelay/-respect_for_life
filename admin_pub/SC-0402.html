@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 자살정보 모니터링 시스템</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+    <div class="wrap">
+        <!-- skip nav -->
+        <div class="skip_nav" title="스킵 네비게이션">
+            <ul>
+                <li><a href="#conteiner" title="본문 바로가기">본문 바로가기</a></li>
+                <li><a href="#nav" title="메뉴 바로가기">메뉴 바로가기</a></li>
+            </ul>
+        </div>
+
+        <!-- header -->
+        <header>
+            <div class="header_left">
+                <h1><a href="">한국생명존중희망재단</a></h1>
+                <span>미디어 자살정보 모니터링 시스템</span>
+            </div>
+            <div class="header_right">
+                <div class="user_info">
+                    <span>사용자</span>님 반갑습니다!
+                </div>
+                <ul>
+                    <li class="modi"><a href="">정보수정</a></li>
+                    <!-- <li class="login"><a href="">로그인</a></li> -->
+                    <li class="logout"><a href="./SC-0101.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- aside -->
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">회원관리</a>
+                        <ul>
+                            <li><a href="./SC-0201.html">회원정보 관리</a></li>
+                            <li class="active">
+                                <a href="javascript:void(0);">봉사시간 관리</a>
+                                <ul>
+                                    <li><a href="./SC-0203.html">봉사시간 달력</a></li>
+                                    <li><a href="./SC-0204.html">1365 봉사자 목록</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./SC-0205.html">우수활동자 관리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">사업관리</a>
+                        <ul>
+                            <li><a href="./SC-0301.html">사업정보</a></li>
+                            <li><a href="./SC-0303.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0305.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0307.html">집중클리닝</a></li>
+                            <li><a href="./SC-0309.html">수기공모</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">게시판관리</a>
+                        <ul>
+                            <li><a href="./SC-0401.html">공지사항</a></li>
+                            <li><a href="./SC-0404.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">통계관리</a>
+                        <ul>
+                            <li><a href="./SC-0501.html">활동인원</a></li>
+                            <li><a href="./SC-0502.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0503.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0504.html">집중클리닝</a></li>
+                            <li><a href="./SC-0505.html">수기공모전</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">시스템관리</a>
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0);">서비스관리</a>
+                                <ul>
+                                    <li><a href="./SC-0600.html">배너 관리</a></li>
+                                    <li><a href="./SC-0601.html">메뉴 관리</a></li>
+                                    <li><a href="./SC-0602.html">공통코드 관리</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- container -->
+        <section class="container">
+
+            <div class="container_inner">
+
+                <h2>공지사항 등록 관리</h2>
+
+                <div class="title_group">
+                    <div class="left">
+                        <!-- <div class="title_content">
+                            <h3>사업정보 상세</h3>
+                        </div> -->
+                    </div>
+                    <div class="right">
+                        <button class="btn_square blue">저장</button>
+                        <button class="btn_square line">목록보기</button>
+                    </div>
+                </div>
+                
+                <div class="tbl_column">
+                    <table>
+                        <caption>공지사항 등록 관리 테이블</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="input_01">제목<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_01">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="">내용<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <span class="delete">텍스트 에디터 영역</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="">파일첨부</label></th>
+                                <td colspan="3">
+
+                                    <div class="tbl_group_in_table">
+
+                                        <div class="title_group">
+                                            <div class="left"></div>
+                                            <div class="right">
+                                                <div class="input_group file_btn">
+                                                    <div class="filebox solo">
+                                                        <input type="file" id="file_01" class="filebox_input">
+                                                        <label for="file_01" class="btn_square black">파일찾기</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tbl_row tbl_min">
+                                            <table>
+                                                <caption>파일 첨부 테이블</caption>
+                                                <colgroup>
+                                                    <col width="80%"/>
+                                                    <col width="20%"/>
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="row" class="agn_c">파일명</th>
+                                                        <th scope="row" class="agn_c">삭제</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><a href="">파일명.pptx</a></td>
+                                                        <td>
+                                                            <div class="btn_center">
+                                                                <button class="btn_square black">삭제</button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="">최상단 노출 여부<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_01" name="radio_group">
+                                                <label for="radio_01">사용</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_02" name="radio_group">
+                                                <label for="radio_02">미사용</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="">공지기간<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group radio_date">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_03" name="radio_group">
+                                                <label for="radio_03">사용</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_04" name="radio_group">
+                                                <label for="radio_04">미사용</label>
+                                            </span>
+                                        </div>
+                                        <div class="datepicker_group">
+                                            <span>
+                                                <label for="input_2" class="blind">날짜선택</label>
+                                                <input type="text" id="input_2" class="datepicker_start">
+                                            </span>
+                                            <span>~</span>
+                                            <span>
+                                                <label for="input_3" class="blind">날짜선택</label>
+                                                <input type="text" id="input_3" class="datepicker_end">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <h2><a href="">한국생명존중희망재단</a></h2>
+            <ul>
+                <li>서울특별시 중구 을지로 6 재능빌딩 15층 교육운영팀 (을지로1가 192-11)</li>
+                <li>Tel : 02-3706-0423~4 Fax : 02-3706-0402 E-mail : edu@kfsp.org</li>
+            </ul>
+        </footer>
+
+    </div>
+    
+    
+</body>
+</html>

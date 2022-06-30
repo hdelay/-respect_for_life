@@ -1,0 +1,332 @@
+
+/* 미디어쿼리 */
+
+
+@media screen and (max-width:1200px) {
+    /* layout */
+
+    /* header */
+    
+    /* 에러페이지 */
+    .error_group .right h3 {
+        font-size: 34px
+    }
+    .error_group .right strong {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    /* layout */
+
+    /* header */
+    
+    /* container */
+
+    /* 제목 */
+    .container h2 strong {
+        font-size: 19px;
+    }
+    .container h3 {
+        
+    }
+    .container h3 strong {
+        font-size: 17px;
+    }
+    .sub_tit {
+        flex-direction: column-reverse;
+        justify-content: inherit;
+        align-items: flex-start;
+    }
+    .sub_tit .btn_right {
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+    .sub_tit .btn_right::after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ddd;
+    }
+    .sub_tit .btn_right .tbl_total {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        max-width: calc(100% - 182px);
+    }
+    .sub_tit .btn_right .tbl_total .tbl_total_group {
+        margin-right: 0;
+    }
+    .sub_tit .btn_right .tbl_total .tbl_total_group:nth-child(1) {
+        margin-right: 10px;
+    }
+    .sub_tit .btn_right .tbl_total .tbl_total_group * {
+        font-size: 14px;
+    }
+    .sub_tit .btn_right .tbl_total .tbl_total_group strong {
+        margin: 0 5px 0 5px;
+    }
+    .sub_tit .btn_right .tbl_total .tbl_total_group + .tbl_total_group::before {
+        display: none;
+    }
+    /* 버튼 */
+    .big {
+        width: calc(50% - 10px);
+        padding: 0;
+    }
+    .btn_square,
+    .btn_circle {
+        font-size: 14px;
+    }
+
+    /* 라디오버튼 */
+    [type="radio"] + label {
+        font-size: 14px;
+    }
+    [type="radio"]:checked + label::before, [type="radio"]:not(:checked) + label::before {
+        top: 50%;
+        margin-top: -9px;
+    }
+    [type="radio"]:checked + label::after, [type="radio"]:not(:checked) + label::after {
+        margin-top: -4px;
+    }
+
+    /* 체크박스 */
+    [type="checkbox"] + label {
+        font-size: 14px;
+    }
+
+    /* 셀렉트박스 */
+    .selectbox label {
+        font-size: 14px;
+    }
+    select {
+        font-size: 14px;
+    }
+    /* textarea 박스 */
+    .textareabox {
+        width: 100%;
+    }
+    .textareabox textarea {
+        width: 100%;
+    }
+
+    /* 인풋박스 */
+    .inputbox label {
+        font-size: 14px;
+    }
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    /* table */
+    .tbl_row table thead tr th {
+        font-size: 14px;
+        line-height: 35px;
+    }
+    .tbl_row table tbody tr td {
+        font-size: 13px;
+        line-height: 35px;
+    }
+
+    .tbl_column table colgroup col {
+        width: 100% !important;
+    }
+    .tbl_column table tbody tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .tbl_column table tbody tr th {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 35px;
+        padding: 0 10px;
+    }
+    .tbl_column table tbody tr th label span {
+        display: inline-block;
+        margin-left: 5px;
+    }
+    .tbl_column table tbody tr td {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        box-sizing: border-box;
+        border-left: 1px solid #E5E5E5;
+        line-height: 35px;
+        font-size: 13px;
+    }
+    .tbl_column table tbody tr td:last-child {
+        border-right: 1px solid #E5E5E5;
+    }
+    .mob_blind {
+        display: none;
+    }
+    .mob_tblw {
+        width: 100px !important;
+    }
+
+    /* 검색폼 */
+    .search_form {
+        padding: 15px 15px;
+    }
+    .search_form .search_group {
+        width: 100%;
+    }
+    .search_form dl dt {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+    .search_form dl dd {
+        width: 100%;
+    }
+    .search_form .btn_center {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+        height: 38px;
+    }
+    .search_form dl.half {
+        width: 100%;
+    }
+    .search_form dl.one_third {
+        width: 100%;
+    }
+    /* 셀렉트박스 */
+    .selectbox {
+        min-width: 100px;
+    }
+    .input_group .selectbox + .inputbox {
+        width: calc(100% - 110px);
+    }
+
+    /* 인풋그룹 */
+    .rdo_group > span {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .rdo_group span + span {
+        margin-left: 0;
+    }
+    .rdo_group span.mob_width100 {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .rdo_group span.mob_width100 .rdo_group_muti {
+        margin-right: 10px;
+    }
+    .rdo_group span .datepicker_group {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .input_group.input_email .inputbox:nth-child(1) {
+        width: 33%;
+    }
+    .input_group.input_email .inputbox:nth-child(3) {
+        width: calc(100% - 38% - 7px);
+    }
+    .input_group.input_email .selectbox:nth-child(4) {
+        width: 100%;
+        margin-top: 5px;
+        margin-left: 0;
+    }
+    .input_group.radio_input .rdo_group {
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+    .input_group.radio_input .rdo_group span + span {
+        margin-left: 10px;
+    }
+    .input_group.radio_input .inputbox {
+        margin-left: 0;
+        width: 100%;
+    }
+    .input_group.radio_help {
+        justify-content: flex-end;
+    }
+    .input_group.radio_help .rdo_group {
+        width: 100%;
+    }
+    
+    /* 페이징 */ 
+    .paging {display: none;}
+    .paging.mob {display: block;}
+    .paging ul li + li {
+        margin-left: 5px;
+    }
+
+    /* 에러페이지 */
+    .error_group {
+        flex-direction: column;
+    }
+    .error_group .left,
+    .error_group .right {
+        width: 100%;
+    }
+    .error_group .right strong {
+        text-align: center;
+    }
+
+    /* 팝업 */
+    .modal {
+        width: 100%;
+        min-width: inherit;
+    }
+    .modal_content {
+        padding: 0 15px 10px 15px;
+        box-sizing: border-box;
+        max-height: calc(100vh - 95px - 108px);
+        overflow-y: auto;
+    }
+    .address_result_group {
+        white-space:normal;
+    }
+    .address_result .mob_tblw {
+        width: 80px !important;
+    }
+    .address_result_group span {
+        display: block;
+        width: calc(100% - 58px);
+    }
+    .modal_content .modal_content_txt {
+        max-width: 100%;
+    }
+    /* 자살유발정보/유해정보 도움말 */
+    .help_content {
+        top: 70px;
+        padding: 5px;
+    }
+    .help_content dl dt {
+        font-size: 17px;
+    }
+    .help_content dl dd {
+        font-size: 14px;
+        padding-left: 0;
+    }
+    .help_content dl:nth-child(1) dd:nth-child(3) ul {
+        flex-direction: column;
+    }
+    .help_content dl:nth-child(1) dd:nth-child(3) ul li {
+        width: 100%;
+    }
+    .help_content dl:nth-child(3) dd ul {
+        flex-direction: column;
+    }
+    .help_content dl:nth-child(3) dd ul li {
+        width: 100%;
+    }
+        
+    /* footer */
+    
+}

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국생명존중희망재단</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+        
+</head>
+<body>
+    <div class="wrap">
+        <!-- skip nav -->
+        <div class="skip_nav" title="스킵 네비게이션">
+            <ul>
+                <li><a href="#conteiner" title="본문 바로가기">본문 바로가기</a></li>
+                <li><a href="#nav" title="메뉴 바로가기">메뉴 바로가기</a></li>
+            </ul>
+        </div>
+
+        <!-- header -->
+        <header>
+            <div class="inner">
+                <h1 class="logo"><a href="" title="한국생명존중희망재단">한국생명존중희망재단</a></h1>
+                <div class="navigation">
+                    <div class="info">
+                        <div class="info_txt">
+                            <span>홍길동</span>님 반갑습니다.
+                        </div>
+                        <ul>
+                            <li><a href="./SC-1602.html" title="정보수정">정보수정</a></li>
+                            <!-- <li><a href="./SC-1002.html" title="로그인">로그인</a></li> -->
+                            <li><a href="./SC-1603.html" title="로그아웃">로그아웃</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)" title="사업안내">사업안내</a>
+                                <ul>
+                                    <li><a href="./SC-1101.html" title="지켜줌인(人)">지켜줌인(人)</a></li>
+                                    <li><a href="./SC-1102.html" title="집중클리닝">집중클리닝</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="지켜줌인(자살유발정보)">지켜줌인(자살유발정보)</a>
+                                <ul>
+                                    <li><a href="./SC-1200.html" title="교육수강">교육수강</a></li>
+                                    <li><a href="./SC-1201.html" title="활동하기">활동하기</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="지켜줌인(영상콘텐츠)">지켜줌인(영상콘텐츠)</a>
+                                <ul>
+                                    <li><a href="./SC-1300.html" title="교육수강">교육수강</a></li>
+                                    <li><a href="./SC-1301.html" title="활동하기">활동하기</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="집중클리닝 활동">집중클리닝 활동</a>
+                                <ul>
+                                    <li><a href="./SC-1401.html" title="교육수강">교육수강</a></li>
+                                    <li><a href="./SC-1402.html" title="참여하기">참여하기</a></li>
+                                    <li><a href="./SC-1404.html" title="수기공모">수기공모</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="공지사항">공지사항</a>
+                                <ul>
+                                    <li><a href="./SC-1501.html" title="공지사항">공지사항</a></li>
+                                    <li><a href="./SC-1503.html" title="FAQ">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" title="마이페이지">마이페이지</a>
+                                <ul>
+                                    <li><a href="./SC-1602.html" title="정보수정">정보수정</a></li>
+                                    <li><a href="./SC-1603.html" title="활동증명서">활동증명서</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- 모바일 전체메뉴 -->
+            <a href="javascript:void(0);" class="all_menu_btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <nav class="all_menu">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" title="사업안내">사업안내</a>
+                        <ul>
+                            <li><a href="./SC-1101.html" title="지켜줌인(人)">지켜줌인(人)</a></li>
+                            <li><a href="./SC-1102.html" title="집중클리닝">집중클리닝</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="지켜줌인(자살유발정보)">지켜줌인(자살유발정보)</a>
+                        <ul>
+                            <li><a href="./SC-1200.html" title="교육수강">교육수강</a></li>
+                            <li><a href="./SC-1201.html" title="활동하기">활동하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="지켜줌인(영상콘텐츠)">지켜줌인(영상콘텐츠)</a>
+                        <ul>
+                            <li><a href="./SC-1300.html" title="교육수강">교육수강</a></li>
+                            <li><a href="./SC-1301.html" title="활동하기">활동하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="집중클리닝 활동">집중클리닝 활동</a>
+                        <ul>
+                            <li><a href="./SC-1401.html" title="교육수강">교육수강</a></li>
+                            <li><a href="./SC-1402.html" title="참여하기">참여하기</a></li>
+                            <li><a href="./SC-1404.html" title="수기공모">수기공모</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="공지사항">공지사항</a>
+                        <ul>
+                            <li><a href="./SC-1501.html" title="공지사항">공지사항</a></li>
+                            <li><a href="./SC-1503.html" title="FAQ">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" title="마이페이지">마이페이지</a>
+                        <ul>
+                            <li><a href="./SC-1602.html" title="정보수정">정보수정</a></li>
+                            <li><a href="./SC-1603.html" title="활동증명서">활동증명서</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- container -->
+        <div id="conteiner" class="container">
+
+            <div class="inner">
+
+                <h2><strong>개인정보관리</strong></h2>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="radio_001">활동 구분<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="rdo_group">
+                                        <span>
+                                            <input type="radio" id="radio_003" name="radio_group1" disabled/>
+                                            <label for="radio_003">미디어 자살정보 모니터링단 지켜줄인(人)</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="radio_004" name="radio_group1" checked />
+                                            <label for="radio_004">자살유발정보 집중클리닝</label>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_001">ID<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group input_btn">
+                                        <div class="inputbox">
+                                            <label for="input_001" class="blind">ID 입력</label>
+                                            <input type="text" id="input_001">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">중복확인</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_002">이름<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_002">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_003">비밀번호<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_003" class="blind">비밀번호 입력</label>
+                                            <input type="password" id="input_003">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_004">비밀번호 확인<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_004" class="blind">비밀번호 확인 입력</label>
+                                            <input type="password" id="input_004">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_005">주소<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_searchbtn">
+                                        <div class="inputbox">
+                                            <label for="input_005" class="blind">주소 입력</label>
+                                            <input type="text" id="input_005">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black btn_search modal_btn">돋보기</button>
+                                        </div>
+                                    </div>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_005" class="blind">나머지주소 입력</label>
+                                            <input type="text" id="input_005">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_006">이메일<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_email">
+                                        <div class="inputbox">
+                                            <label for="input_006" class="blind">이메일 아이디 입력</label>
+                                            <input type="text" id="input_006">
+                                        </div>
+                                        <span>@</span>
+                                        <div class="inputbox">
+                                            <label for="input_007" class="blind">이메일 뒷주소 입력</label>
+                                            <input type="text" id="input_007">
+                                        </div>
+                                        <div class="selectbox">
+                                            <label for="select_001" class="blind">이메일 뒷주소 선택</label>
+                                            <select name="" id="select_001">
+                                                <option value="">직접입력</option>
+                                                <option value="">naver.com</option>
+                                                <option value="">gmail.com</option>
+                                                <option value="">hanmail.com</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_0001">전화번호<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group input_btn">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_0001" readonly>
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">번호수정</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_010">생년월일<span class="req"></span></label></th>
+                                <td>
+                                    <div class="datepicker_group solo">
+                                        <span>
+                                            <label for="input_010" class="blind">날짜선택</label>
+                                            <input type="text" id="input_010" class="datepicker_day">
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_011">1365ID</label></th>
+                                <td colspan="3">
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_011" class="blind">1365ID 입력</label>
+                                            <input type="text" id="input_011">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="btn_center">
+                    <button class="btn_square black big modal_btn">회원탈퇴</button>
+                    <button class="btn_square black big">저장</button>
+                    <button class="btn_square line big">취소</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- footer -->
+        <footer>
+            <div class="footer_info">
+                <div class="inner">
+                    <div class="footer_link">
+                        <ul>
+                            <li><a href="">이용약관</a></li>
+                            <li><a href="">개인정보처리방침</a></li> 
+                        </ul>
+                    </div>
+                    <div class="family_site">
+                        <select onchange="window.open(this.value,'bank','')" class="familySite" name="familySite">
+                            <option selected="selected">유관기관</option>
+                            <option value="http://www.mohw.go.kr/react/index.jsp" title="새창열림">보건복지부</option>
+                            <option value="http://suicideprevention.or.kr/main/index.html" title="새창열림">한국자살예방협회</option>
+                            <option value="http://www.nmhc.or.kr/" title="새창열림">중앙정신건강사업지원단</option>
+                            <option value="https://www.mois.go.kr/frt/a01/frtMain.do" title="새창열림">행정안전부</option>
+                            <option value="http://www.mogef.go.kr/" title="새창열림">여성가족부</option>
+                            <option value="http://kostat.go.kr/portal/korea/index.action" title="새창열림">통계청</option>
+                            <option value="http://www.moel.go.kr/index.do" title="새창열림">고용노동부</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="inner">
+                <h2><a href="" title="한국생명존중희망재단">한국생명존중희망재단</a></h2>
+                <ul>
+                    <li>서울특별시 중구 을지로 6 재능빌딩 15층 교육운영팀 (을지로1가 192-11)</li>
+                    <li>Tel : 02-3706-0423~4 Fax : 02-3706-0402 E-mail : edu@kfsp.org</li>
+                    <li>Copyright(c) 2021 한국생명존중희망재단 All Rights Reserved</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 주소찾기 팝업 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>주소찾기</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <ul class="address_search">
+                <li>
+                    <div class="rdo_group">
+                        <span>
+                            <input type="radio" id="radio_02" name="radio_group" checked>
+                            <label for="radio_02">도로명주소</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="radio_03" name="radio_group">
+                            <label for="radio_03">지번주소</label>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="input_group input_searchbtn">
+                        <div class="inputbox">
+                            <label for="input_005" class="blind">주소 입력</label>
+                            <input type="text" id="input_005">
+                        </div>
+                        <div class="btnbox">
+                            <button class="btn_square black btn_search">돋보기</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="address_result">
+                <div class="tbl_row">
+                    <table>
+                        <caption>데이타 폼</caption>
+                        <colgroup>
+                            <col width="20%;" class="mob_tblw"/>
+                            <col width="*" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">우편번호</th>
+                                <th scope="col">주소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 중산간동로7227번길 111-10</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 하례리 818-1</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="input_01">선택한 주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_01" readonly>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_02">상세주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_02">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle black">확인</button>
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+    
+    <!-- 알림팝업 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>가입 탈퇴</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <div class="modal_content_txt">
+                <strong>정말로 탈퇴 하시겠습니까?</strong>
+                <span>탈퇴 시 활동 내용은 관리자에게 수집되며, 재가입 시 기존 활동 내용은 연계되지 않습니다.</span>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle black">탈퇴하기</button>
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+
+    
+
+</body>
+</html>

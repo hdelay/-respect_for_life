@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 자살정보 모니터링 시스템</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+    <div class="wrap">
+        <!-- skip nav -->
+        <div class="skip_nav" title="스킵 네비게이션">
+            <ul>
+                <li><a href="#conteiner" title="본문 바로가기">본문 바로가기</a></li>
+                <li><a href="#nav" title="메뉴 바로가기">메뉴 바로가기</a></li>
+            </ul>
+        </div>
+
+        <!-- header -->
+        <header>
+            <div class="header_left">
+                <h1><a href="">한국생명존중희망재단</a></h1>
+                <span>미디어 자살정보 모니터링 시스템</span>
+            </div>
+            <div class="header_right">
+                <div class="user_info">
+                    <span>사용자</span>님 반갑습니다!
+                </div>
+                <ul>
+                    <li class="modi"><a href="">정보수정</a></li>
+                    <!-- <li class="login"><a href="">로그인</a></li> -->
+                    <li class="logout"><a href="./SC-0101.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- aside -->
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">회원관리</a>
+                        <ul>
+                            <li><a href="./SC-0201.html">회원정보 관리</a></li>
+                            <li class="active">
+                                <a href="javascript:void(0);">봉사시간 관리</a>
+                                <ul>
+                                    <li><a href="./SC-0203.html">봉사시간 달력</a></li>
+                                    <li><a href="./SC-0204.html">1365 봉사자 목록</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./SC-0205.html">우수활동자 관리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">사업관리</a>
+                        <ul>
+                            <li><a href="./SC-0301.html">사업정보</a></li>
+                            <li><a href="./SC-0303.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0305.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0307.html">집중클리닝</a></li>
+                            <li><a href="./SC-0309.html">수기공모</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">게시판관리</a>
+                        <ul>
+                            <li><a href="./SC-0401.html">공지사항</a></li>
+                            <li><a href="./SC-0404.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">통계관리</a>
+                        <ul>
+                            <li><a href="./SC-0501.html">활동인원</a></li>
+                            <li><a href="./SC-0502.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0503.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0504.html">집중클리닝</a></li>
+                            <li><a href="./SC-0505.html">수기공모전</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">시스템관리</a>
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0);">서비스관리</a>
+                                <ul>
+                                    <li><a href="./SC-0600.html">배너 관리</a></li>
+                                    <li><a href="./SC-0601.html">메뉴 관리</a></li>
+                                    <li><a href="./SC-0602.html">공통코드 관리</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- container -->
+        <section class="container">
+
+            <div class="container_inner">
+
+                <h2>회원정보 상세</h2>
+
+                <div class="title_group">
+                    <div class="left">
+                        <div class="title_content">
+                            <h3>회원 기본정보</h3>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button class="btn_square blue">저장</button>
+                        <button class="btn_square line">목록보기</button>
+                    </div>
+                </div>
+                
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원정보 상세 테이블</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="radio_01">회원구분<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="rdo_group">
+                                        <span>
+                                            <input type="radio" id="radio_01" name="radio_group">
+                                            <label for="radio_01">지켜줌인(人)</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="radio_02" name="radio_group">
+                                            <label for="radio_02">집중클리닝</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="radio_03" name="radio_group">
+                                            <label for="radio_03">관리자</label>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_01">ID<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group input_btn">
+                                        <div class="inputbox">
+                                            <label for="input_001" class="blind">ID 입력</label>
+                                            <input type="text" id="input_01">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">중복확인</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_02">이름<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_02">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_003">비밀번호<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_password_btn">
+                                        <div class="inputbox">
+                                            <label for="input_003" class="blind">ID 입력</label>
+                                            <input type="password" id="input_003">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">비밀번호 변경</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_05">주소<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_searchbtn">
+                                        <div class="inputbox">
+                                            <label for="input_05" class="blind">주소 입력</label>
+                                            <input type="text" id="input_05">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black btn_search modal_btn">돋보기</button>
+                                        </div>
+                                    </div>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_006" class="blind">나머지주소 입력</label>
+                                            <input type="text" id="input_006">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_06">이메일<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_email">
+                                        <div class="inputbox">
+                                            <label for="input_06" class="blind">이메일 아이디 입력</label>
+                                            <input type="text" id="input_06">
+                                        </div>
+                                        <span>@</span>
+                                        <div class="inputbox">
+                                            <label for="input_07" class="blind">이메일 뒷주소 입력</label>
+                                            <input type="text" id="input_07">
+                                        </div>
+                                        <div class="selectbox">
+                                            <label for="select_01" class="blind">이메일 뒷주소 선택</label>
+                                            <select name="" id="select_01">
+                                                <option value="">직접입력</option>
+                                                <option value="">naver.com</option>
+                                                <option value="">gmail.com</option>
+                                                <option value="">hanmail.com</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_02">전화번호<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group input_tell">
+                                        <div class="selectbox">
+                                            <label for="select_02" class="blind">전화번호 앞자리 선택</label>
+                                            <select name="" id="select_02">
+                                                <option value="">선택</option>
+                                                <option value="">010</option>
+                                                <option value="">031</option>
+                                                <option value="">042</option>
+                                            </select>
+                                        </div>
+                                        <div class="inputbox">
+                                            <label for="input_08" class="blind">전화번호 중간자리 입력</label>
+                                            <input type="text" id="input_08">
+                                        </div>
+                                        <div class="inputbox">
+                                            <label for="input_09" class="blind">전화번호 뒷자리 입력</label>
+                                            <input type="text" id="input_09">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="input_10">생년월일<span class="req"></span></label></th>
+                                <td>
+                                    <div class="datepicker_group solo">
+                                        <span>
+                                            <label for="input_10" class="blind">날짜선택</label>
+                                            <input type="text" id="input_10" class="datepicker_day">
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_11">1365ID</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_11" class="blind">1365ID 입력</label>
+                                            <input type="text" id="input_11">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="select_03">회원상태<span class="req"></span></label></th>
+                                <td>
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_03">
+                                            <option value="">정상</option>
+                                            <option value="">탈퇴</option>
+                                            <option value="">휴면</option>
+                                            <option value="">폐기</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_12">관리자메모</label></th>
+                                <td colspan="3">
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <label for="input_12" class="blind">1365ID 입력</label>
+                                            <input type="text" id="input_12">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <h2><a href="">한국생명존중희망재단</a></h2>
+            <ul>
+                <li>서울특별시 중구 을지로 6 재능빌딩 15층 교육운영팀 (을지로1가 192-11)</li>
+                <li>Tel : 02-3706-0423~4 Fax : 02-3706-0402 E-mail : edu@kfsp.org</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- 주소찾기 팝업 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>주소찾기</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+            <ul class="address_search">
+                <li>
+                    <div class="rdo_group">
+                        <span>
+                            <input type="radio" id="radio_002" name="radio_group001" checked="">
+                            <label for="radio_002">도로명주소</label>
+                        </span>
+                        <span>
+                            <input type="radio" id="radio_003" name="radio_group001">
+                            <label for="radio_003">지번주소</label>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <div class="input_group input_searchbtn">
+                        <div class="inputbox">
+                            <label for="input_005" class="blind">주소 입력</label>
+                            <input type="text" id="input_005">
+                        </div>
+                        <div class="btnbox">
+                            <button class="btn_square black btn_search">돋보기</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="address_result">
+                <div class="tbl_row">
+                    <table>
+                        <caption>데이타 폼</caption>
+                        <colgroup>
+                            <col width="20%;" class="mob_tblw">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">우편번호</th>
+                                <th scope="col">주소</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 중산간동로7227번길 111-10</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>제주특별자치도 서귀포시 남원읍 하례리 818-1</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>41068</td>
+                                <td class="agn_l">
+                                    <div class="address_result_group">
+                                        <strong class="address01">도로명</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                    <div class="address_result_group">
+                                        <strong class="address02">지번</strong>
+                                        <span>대구광역시 동구 첨단로 39(신서동)</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>회원가입 폼</caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="30%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="input_01">선택한 주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_01" readonly="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_02">상세주소</label></th>
+                                <td>
+                                    <div class="input_group">
+                                        <div class="inputbox">
+                                            <input type="text" id="input_02">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle black">확인</button>
+                <button class="btn_circle line modal_content_close">닫기</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+    
+</body>
+</html>

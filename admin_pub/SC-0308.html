@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 자살정보 모니터링 시스템</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+    <div class="wrap">
+        <!-- skip nav -->
+        <div class="skip_nav" title="스킵 네비게이션">
+            <ul>
+                <li><a href="#conteiner" title="본문 바로가기">본문 바로가기</a></li>
+                <li><a href="#nav" title="메뉴 바로가기">메뉴 바로가기</a></li>
+            </ul>
+        </div>
+
+        <!-- header -->
+        <header>
+            <div class="header_left">
+                <h1><a href="">한국생명존중희망재단</a></h1>
+                <span>미디어 자살정보 모니터링 시스템</span>
+            </div>
+            <div class="header_right">
+                <div class="user_info">
+                    <span>사용자</span>님 반갑습니다!
+                </div>
+                <ul>
+                    <li class="modi"><a href="">정보수정</a></li>
+                    <!-- <li class="login"><a href="">로그인</a></li> -->
+                    <li class="logout"><a href="./SC-0101.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- aside -->
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">회원관리</a>
+                        <ul>
+                            <li><a href="./SC-0201.html">회원정보 관리</a></li>
+                            <li class="active">
+                                <a href="javascript:void(0);">봉사시간 관리</a>
+                                <ul>
+                                    <li><a href="./SC-0203.html">봉사시간 달력</a></li>
+                                    <li><a href="./SC-0204.html">1365 봉사자 목록</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./SC-0205.html">우수활동자 관리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">사업관리</a>
+                        <ul>
+                            <li><a href="./SC-0301.html">사업정보</a></li>
+                            <li><a href="./SC-0303.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0305.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0307.html">집중클리닝</a></li>
+                            <li><a href="./SC-0309.html">수기공모</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">게시판관리</a>
+                        <ul>
+                            <li><a href="./SC-0401.html">공지사항</a></li>
+                            <li><a href="./SC-0404.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">통계관리</a>
+                        <ul>
+                            <li><a href="./SC-0501.html">활동인원</a></li>
+                            <li><a href="./SC-0502.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0503.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0504.html">집중클리닝</a></li>
+                            <li><a href="./SC-0505.html">수기공모전</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">시스템관리</a>
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0);">서비스관리</a>
+                                <ul>
+                                    <li><a href="./SC-0600.html">배너 관리</a></li>
+                                    <li><a href="./SC-0601.html">메뉴 관리</a></li>
+                                    <li><a href="./SC-0602.html">공통코드 관리</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- container -->
+        <section class="container">
+
+            <div class="container_inner">
+
+                <h2>집중클리닝 모니터링</h2>
+
+                <div class="title_group">
+                    <div class="left">
+                        
+                    </div>
+                    <div class="right">
+                        <button class="btn_square blue">저장하기</button>
+                        <button class="btn_square line">목록보기</button>
+                    </div>
+                </div>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>자살유발정보/유해정보 모니터링 테이블</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="radio_01">구분</label></th>
+                                <td colspan="3">
+                                    <div class="input_group radio_help">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_01" name="radio_group">
+                                                <label for="radio_01">자살유발정보</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_02" name="radio_group">
+                                                <label for="radio_02">유해정보</label>
+                                            </span>
+                                        </div>
+                                        <div class="help_group">
+                                            <span>자살유발정보/유해정보는 어떻게 구분하나요?</span>
+                                            <button class="btn_square black btn_search">돋보기</button>
+                                            <div class="help_content">
+                                                <h3>자살유발정보와 유해정보는 어떻게 구분할까요?</h3>
+                                                <ol>
+                                                    <li>
+                                                        법적 처벌 근거가 있는 <strong>"자살유발정보"</strong>
+                                                        <div class="hashtag">
+                                                            <span>#자살약</span>
+                                                            <span>#자살시도</span>
+                                                            <span>#ㄷㅂㅈㅅ</span>
+                                                            <span>#ㅅㅁㅈ</span>
+                                                            <span>#자살방법</span>
+                                                            <span>#편안한죽음</span>
+                                                            <span>#자살약</span>
+                                                            <span>#번개탄</span>
+                                                            <span>#투신</span>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_01.png" alt="그림예시1">
+                                                                </div>
+                                                                <span>자살동반자 모집정보</span>
+                                                            </li>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_02.png" alt="그림예시2">
+                                                                </div>
+                                                                <span>자살에 대한 구체적인 방법을 제시하는 정보</span>
+                                                            </li>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_03.png" alt="그림예시3-1">
+                                                                    <img src="./images/content/img_help_content_03_01.png" alt="그림예시3-2">
+                                                                </div>
+                                                                <span>자살을 실행하거나 유도하는 내용을 담은 정보</span>
+                                                            </li>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_04.png" alt="그림예시4">
+                                                                </div>
+                                                                <span>자살위해물건의 판매 또는 활용에 관한 정보</span>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        계도 및 확산 방지를 위한 <strong>"유해정보"</strong>
+                                                        <div class="hashtag">
+                                                            <span>#자해</span>
+                                                            <span>#자해계</span>
+                                                            <span>#자해전시</span>
+                                                            <span>#우울계</span>
+                                                            <span>#자살각</span>
+                                                            <span>#자살쇼</span>
+                                                            <span>#자살티비</span>
+                                                            <span>#자살충동</span>
+                                                            <span>#자살해</span>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_05.png" alt="그림예시5">
+                                                                </div>
+                                                                <span>자해사진 및 동영상 정보</span>
+                                                            </li>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_06_01.png" alt="그림예시6-1">
+                                                                    <img src="./images/content/img_help_content_06_02.png" alt="그림예시6-2">
+                                                                    <img src="./images/content/img_help_content_06_03.png" alt="그림예시6-3">
+                                                                    <img src="./images/content/img_help_content_06_04.png" alt="그림예시6-4">
+                                                                </div>
+                                                                <span>자살에 대한 막연한 감정 표현</span>
+                                                            </li>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_07_01.png" alt="그림예시7-1">
+                                                                    <img src="./images/content/img_help_content_07_02.png" alt="그림예시7-2">
+                                                                    <img src="./images/content/img_help_content_07_03.png" alt="그림예시7-3">
+                                                                </div>
+                                                                <span>자살을 미화하는 정보</span>
+                                                            </li>
+                                                            <li>
+                                                                <div class="img">
+                                                                    <img src="./images/content/img_help_content_08_01.png" alt="그림예시8-1">
+                                                                    <img src="./images/content/img_help_content_08_01.png" alt="그림예시8-2">
+                                                                </div>
+                                                                <span>자살을 희화화하는 정보</span>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_01">자살유발정보 분류<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_01">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_02">유해정보 분류<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_02">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_03">사이트 분류<span class="req"></span></label></th>
+                                <td>
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_03">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="select_04">사이트명<span class="req"></span></label></th>
+                                <td>
+                                    <div class="input_group select_input">
+                                        <div class="selectbox">
+                                            <select name="" id="select_04">
+                                                <option value="">내용</option>
+                                                <option value="">내용</option>
+                                                <option value="">내용</option>
+                                            </select>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="input_01">URL<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group input_btn">
+                                        <div class="inputbox">
+                                            <label for="input_01" class="blind">ID 입력</label>
+                                            <input type="text" id="input_01">
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">입력확인</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_05">게시 형태<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_05">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="select_06">자살위해물건 정보</label></th>
+                                <td colspan="3">
+                                    <div class="selectbox solo">
+                                        <select name="" id="select_06">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="file_01">자살유발정보/유해정보 내용 첨부<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="input_group file_btn">
+                                        <div class="filebox">
+                                            <input type="text" value="첨부파일" placeholder="첨부파일" class="filebox_val">
+                                            <input type="file" id="file_01" class="filebox_input">
+                                            <label for="file_01" class="btn_square black">파일첨부</label>
+                                        </div>
+                                        <div class="btnbox">
+                                            <button class="btn_square black">파일삭제</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_0001">사용여부<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="rdo_group">
+                                        <span>
+                                            <input type="radio" id="radio_0001" name="radio_group01">
+                                            <label for="radio_0001">사용</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="radio_0002" name="radio_group01">
+                                            <label for="radio_0002">미사용</label>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="sub_tit mgt_30">
+                    <h3><strong>긴급구조대상자 신고</strong></h3>
+                </div>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>긴급구조대상자 신고</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="radio_001">긴급구조대상자 신고<span class="req"></span></label></th>
+                                <td colspan="3">
+                                    <div class="rdo_group">
+                                        <span>
+                                            <input type="radio" id="radio_001" name="radio_group02">
+                                            <label for="radio_001">유(112신고)</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="radio_002" name="radio_group02">
+                                            <label for="radio_002">무</label>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="txtbox">
+                    <ul>
+                        <li>
+                            아래 내용을 작성  후 신고하면 112에 즉시 신고되어, 긴급구조대상자 구조를 위해 경찰이 긴급 출동합니다.<br/>
+                            사유를 다시 한번 확인 부탁드리며, 신중한 신고 부탁드립니다.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tbl_column">
+                    <table>
+                        <caption>긴급구조대상자 신고</caption>
+                        <colgroup>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                            <col width="20%"/>
+                            <col width="30%"/>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="select_07">신고사유</label></th>
+                                <td colspan="3">
+                                    <div class="input_group select_input select_input_display">
+                                        <div class="selectbox">
+                                            <select name="" id="select_07">
+                                                <option value="">내용</option>
+                                                <option value="">내용</option>
+                                                <option value="etc">기타</option>
+                                            </select>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_03">이름</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_03" name="radio_group">
+                                                <label for="radio_03">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_04" name="radio_group">
+                                                <label for="radio_04">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="radio_05">연락처</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_05" name="radio_group">
+                                                <label for="radio_05">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_06" name="radio_group">
+                                                <label for="radio_06">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_07">성별</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_07" name="radio_group">
+                                                <label for="radio_07">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_08" name="radio_group">
+                                                <label for="radio_08">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="radio_09">ID</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_09" name="radio_group">
+                                                <label for="radio_09">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_10" name="radio_group">
+                                                <label for="radio_10">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_11">나이</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_11" name="radio_group">
+                                                <label for="radio_11">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_12" name="radio_group">
+                                                <label for="radio_12">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for="radio_13">지역</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_13" name="radio_group">
+                                                <label for="radio_13">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_14" name="radio_group">
+                                                <label for="radio_14">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="radio_15">기타정보</label></th>
+                                <td>
+                                    <div class="input_group radio_input">
+                                        <div class="rdo_group">
+                                            <span>
+                                                <input type="radio" id="radio_15" name="radio_group">
+                                                <label for="radio_15">무</label>
+                                            </span>
+                                            <span>
+                                                <input type="radio" id="radio_16" name="radio_group">
+                                                <label for="radio_16">유</label>
+                                            </span>
+                                        </div>
+                                        <div class="inputbox">
+                                            <input type="text" id="">
+                                        </div>
+                                    </div>
+                                </td>
+                                <th scope="row"><label for=""></label></th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <h2><a href="">한국생명존중희망재단</a></h2>
+            <ul>
+                <li>서울특별시 중구 을지로 6 재능빌딩 15층 교육운영팀 (을지로1가 192-11)</li>
+                <li>Tel : 02-3706-0423~4 Fax : 02-3706-0402 E-mail : edu@kfsp.org</li>
+            </ul>
+        </footer>
+
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 자살정보 모니터링 시스템</title>
+
+    <!-- pub css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+
+    <!-- pub js -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+    <div class="wrap">
+        <!-- skip nav -->
+        <div class="skip_nav" title="스킵 네비게이션">
+            <ul>
+                <li><a href="#conteiner" title="본문 바로가기">본문 바로가기</a></li>
+                <li><a href="#nav" title="메뉴 바로가기">메뉴 바로가기</a></li>
+            </ul>
+        </div>
+
+        <!-- header -->
+        <header>
+            <div class="header_left">
+                <h1><a href="">한국생명존중희망재단</a></h1>
+                <span>미디어 자살정보 모니터링 시스템</span>
+            </div>
+            <div class="header_right">
+                <div class="user_info">
+                    <span>사용자</span>님 반갑습니다!
+                </div>
+                <ul>
+                    <li class="modi"><a href="">정보수정</a></li>
+                    <!-- <li class="login"><a href="">로그인</a></li> -->
+                    <li class="logout"><a href="./SC-0101.html">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- aside -->
+        <aside>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);">회원관리</a>
+                        <ul>
+                            <li><a href="./SC-0201.html">회원정보 관리</a></li>
+                            <li class="active">
+                                <a href="javascript:void(0);">봉사시간 관리</a>
+                                <ul>
+                                    <li><a href="./SC-0203.html">봉사시간 달력</a></li>
+                                    <li><a href="./SC-0204.html">1365 봉사자 목록</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./SC-0205.html">우수활동자 관리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">사업관리</a>
+                        <ul>
+                            <li><a href="./SC-0301.html">사업정보</a></li>
+                            <li><a href="./SC-0303.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0305.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0307.html">집중클리닝</a></li>
+                            <li><a href="./SC-0309.html">수기공모</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">게시판관리</a>
+                        <ul>
+                            <li><a href="./SC-0401.html">공지사항</a></li>
+                            <li><a href="./SC-0404.html">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">통계관리</a>
+                        <ul>
+                            <li><a href="./SC-0501.html">활동인원</a></li>
+                            <li><a href="./SC-0502.html">지켜줌인(자살유발정보)</a></li>
+                            <li><a href="./SC-0503.html">지켜줌인(영상콘텐츠)</a></li>
+                            <li><a href="./SC-0504.html">집중클리닝</a></li>
+                            <li><a href="./SC-0505.html">수기공모전</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">시스템관리</a>
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0);">서비스관리</a>
+                                <ul>
+                                    <li><a href="./SC-0600.html">배너 관리</a></li>
+                                    <li><a href="./SC-0601.html">메뉴 관리</a></li>
+                                    <li><a href="./SC-0602.html">공통코드 관리</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- container -->
+        <section class="container">
+
+            <div class="container_inner">
+
+                <h2>공통코드 관리</h2>
+
+                <div class="layout_group code_group">
+                    <div class="left">
+
+                        <div class="title_group">
+                            <div class="left">
+                                <h3>코드그룹</h3>
+                            </div>
+                            <div class="right">
+                                
+                            </div>
+                        </div>
+
+                        <dl>
+                            <dt class="blind"><label for="">검색어</label></dt>
+                            <dd>
+                                <div class="input_group">
+                                    <div class="selectbox">
+                                        <select name="" id="select_01">
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                    <div class="inputbox">
+                                        <label for="input_01" class="blind">ID 입력</label>
+                                        <input type="text" id="input_01">
+                                    </div>
+                                    <div class="btnbox">
+                                        <button class="btn_square blue">검색</button>
+                                        <button class="btn_square blue modal_btn">추가</button>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+
+                        <div class="tbl_group">
+                            <span class="delete">코드그룹 영역</span>
+                        </div>
+
+                    </div>
+                    <div class="right">
+
+                        <div class="top">
+
+                            <div class="title_group">
+                                <div class="left">
+                                    <h3>코드정보</h3>
+                                </div>
+                                <div class="right">
+                                    <button class="btn_square blue">추가</button>
+                                </div>
+                            </div>
+
+                            <div class="tbl_group">
+                                <span class="delete">하위메뉴 목록 테이블 영역</span>
+                            </div>
+
+                        </div>
+
+                        <div class="bottom">
+
+                            <div class="title_group">
+                                <div class="left">
+                                    <h3>상세코드 정보</h3>
+                                </div>
+                                <div class="right">
+                                    <button class="btn_square blue">저장</button>
+                                    <button class="btn_square line">취소</button>
+                                </div>
+                            </div>
+
+                            <div class="tbl_column">
+                                <table>
+                                    <caption>상세코드 정보 테이블</caption>
+                                    <colgroup>
+                                        <col width="20%">
+                                        <col width="30%">
+                                        <col width="20%">
+                                        <col width="30%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><label for="input_01">그룹코드ID</label></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_01">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <th scope="row"><label for="input_02">그룹코드명</label></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_02">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="input_03">코드ID<span class="req"></span></label></th>
+                                            <td>
+                                                <div class="input_group input_btn">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_03">
+                                                    </div>
+                                                    <div class="btnbox">
+                                                        <button class="btn_square black">중복확인</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <th scope="row"><label for="input_04">코드명<span class="req"></span></label></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_04">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="radio_01">사용유무<span class="req"></span></label></th>
+                                            <td>
+                                                <div class="rdo_group">
+                                                    <span>
+                                                        <input type="radio" id="radio_01" name="radio_group">
+                                                        <label for="radio_01">사용</label>
+                                                    </span>
+                                                    <span>
+                                                        <input type="radio" id="radio_02" name="radio_group">
+                                                        <label for="radio_02">미사용</label>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <th scope="row"><label for="input_05">정렬순서<span class="req"></span></label></th>
+                                            <td>
+                                                <div class="input_group">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_05">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="input_06">코드약어</label></th>
+                                            <td colspan="3">
+                                                <div class="input_group">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_06">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="input_07">코드설명</label></th>
+                                            <td colspan="3">
+                                                <div class="input_group">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_07">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><label for="input_08">비고</label></th>
+                                            <td colspan="3">
+                                                <div class="input_group">
+                                                    <div class="inputbox">
+                                                        <input type="text" id="input_08">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                
+                
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <h2><a href="">한국생명존중희망재단</a></h2>
+            <ul>
+                <li>서울특별시 중구 을지로 6 재능빌딩 15층 교육운영팀 (을지로1가 192-11)</li>
+                <li>Tel : 02-3706-0423~4 Fax : 02-3706-0402 E-mail : edu@kfsp.org</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- 그룹코드정보관리 -->
+    <div class="modal">
+        <div class="modal_header">
+            <h3>그룹코드정보관리</h3>
+            <a href="javascript:void(0);" class="modal_close">
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="modal_content">
+
+            <div class="tbl_column">
+                <table>
+                    <caption>상세코드 정보 테이블</caption>
+                    <colgroup>
+                        <col width="20%">
+                        <col width="30%">
+                        <col width="20%">
+                        <col width="30%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><label for="input_001">그룹코드ID</label></th>
+                            <td colspan="3">
+                                <div class="input_group">
+                                    <div class="inputbox">
+                                        <input type="text" id="input_001">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="input_002">그룹코드명</label></th>
+                            <td colspan="3">
+                                <div class="input_group">
+                                    <div class="inputbox">
+                                        <input type="text" id="input_002">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="radio_001">사용유무<span class="req"></span></label></th>
+                            <td colspan="3">
+                                <div class="rdo_group">
+                                    <span>
+                                        <input type="radio" id="radio_001" name="radio_group">
+                                        <label for="radio_001">사용</label>
+                                    </span>
+                                    <span>
+                                        <input type="radio" id="radio_002" name="radio_group">
+                                        <label for="radio_002">미사용</label>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="input_006">그룹코드약어</label></th>
+                            <td colspan="3">
+                                <div class="input_group">
+                                    <div class="inputbox">
+                                        <input type="text" id="input_006">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="input_007">코드설명</label></th>
+                            <td colspan="3">
+                                <div class="input_group">
+                                    <div class="inputbox">
+                                        <input type="text" id="input_007">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="input_008">비고</label></th>
+                            <td colspan="3">
+                                <div class="input_group">
+                                    <div class="inputbox">
+                                        <input type="text" id="input_008">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="modal_footer">
+            <div class="btn_center">
+                <button class="btn_circle black">저장</button>
+                <button class="btn_circle line modal_content_close">취소</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal_bg"></div>
+    
+</body>
+</html>
